@@ -12,7 +12,40 @@
 </head>
 
 <body>
-    <img src="/assets/logo.png" class="logo">
+  <header>
+    <nav id="navbar">
+      <div class="container">
+        <img src="/assets/logo.png" class="logo" alt="Logo">
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#punkt1">Punkt 1</a></li>
+        <li><a href="#punkt2">Punkt 2</a></li>
+        <li><a href="#punkt3">Punkt 3</a></li>
+        <li><a href="#punkt4">Punkt 4</a></li>
+        <li><a href="#punkt5">Punkt 5</a></li>
+      </ul>
+      <div class="burger" id="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+  </header>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const burger = document.getElementById('burger');
+      const navLinks = document.getElementById('nav-links');
+
+      burger.addEventListener('click', () => {
+        // Toggle Nav
+        navLinks.classList.toggle('nav-active');
+
+        // Burger Animation
+        burger.classList.toggle('toggle');
+      });
+    });
+
+  </script>
 </body>
 
 </html>
