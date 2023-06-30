@@ -24,6 +24,28 @@ html {
   box-sizing: border-box;
 }
 
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #0dfde9 #0dfde9;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(31, 31, 31, 1);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #0dfde9;
+  border-radius: 15px;
+  border: 3px solid rgba(31, 31, 31, 1);
+}
+
 body {
   overflow-x: hidden;
   background-color: $background;
@@ -323,7 +345,8 @@ header {
         right: -100px;
         top: auto;
         bottom: -150px;
-        left: auto;}
+        left: auto;
+      }
     }
 
     .left,
