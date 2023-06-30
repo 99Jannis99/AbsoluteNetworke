@@ -1,6 +1,18 @@
 $breakpoint: 1110px;
 $breakpoint2: 771px;
 
+$background: #1F1F1F;
+$color-dark: #1F1F1F;
+$color-cyan: #0DFDE9;
+$color-white: #ffffff;
+$rgba3: 255;
+
+// $background: #ffffff;
+// $color-dark: #1F1F1F;
+// $color-cyan: #0DFDE9;
+// $color-white: #1F1F1F;
+// $rgba3: 0;
+
 
 html {
   overflow-x: hidden;
@@ -14,7 +26,7 @@ html {
 
 body {
   overflow-x: hidden;
-  background-color: #1F1F1F;
+  background-color: $background;
   font-family: "Rounded Elegance";
 }
 
@@ -45,8 +57,20 @@ header {
     display: flex;
     z-index: 100;
 
+    @function is-light($color) {
+      $r: red($color);
+      $g: green($color);
+      $b: blue($color);
+      $brightness: ($r * 299 + $g * 587 + $b * 114) / 1000;
+      @return $brightness >155;
+    }
+
     .logo {
       width: 250px;
+
+      @if is-light($background) {
+        filter: invert(.9);
+      }
     }
   }
 
@@ -60,7 +84,7 @@ header {
     a {
       padding: 0 20px;
       top: 20px;
-      color: white;
+      color: $color-white;
       opacity: .5;
       font-size: 18px;
       font-weight: bold;
@@ -69,7 +93,7 @@ header {
 
       &:hover {
         padding-top: -20px;
-        text-shadow: #ffffff7a 0px 0px 5px, #ffffff7a 0px 0px 10px, #ffffff7a 0px 0px 15px, 0px 0px 20px, #0DFDE9 0px 0px 30px, #0DFDE9 0px 0px 40px, #0DFDE9 0px 0px 50px, #0DFDE9 0px 0px 75px;
+        text-shadow: #ffffff7a 0px 0px 5px, #ffffff7a 0px 0px 10px, #ffffff7a 0px 0px 15px, 0px 0px 20px, $color-cyan 0px 0px 30px, $color-cyan 0px 0px 40px, $color-cyan 0px 0px 50px, $color-cyan 0px 0px 75px;
       }
 
       &.active {
@@ -90,7 +114,7 @@ header {
       position: relative;
       width: 250px;
       height: 45px;
-      color: #1F1F1F;
+      color: $color-dark;
       font-weight: bold;
       display: flex;
       justify-content: center;
@@ -110,9 +134,9 @@ header {
         width: 100%;
         border-radius: 40px 0px 40px 0px;
         height: 100%;
-        background-color: #0DFDE9;
-        -webkit-box-shadow: 5px 5px 30px 5px #0DFDE9;
-        box-shadow: 5px 5px 30px 5px #0DFDE9;
+        background-color: $color-cyan;
+        -webkit-box-shadow: 5px 5px 30px 5px $color-cyan;
+        box-shadow: 5px 5px 30px 5px $color-cyan;
         filter: blur(5px);
         z-index: 1;
         transition: all 0.3s ease;
@@ -124,28 +148,28 @@ header {
         position: absolute;
         bottom: 0;
         width: 0%;
-        border-bottom: 0px solid #0DFDE9;
-        border-top: 0px solid #0DFDE9;
+        border-bottom: 0px solid $color-cyan;
+        border-top: 0px solid $color-cyan;
         z-index: 1;
         transition: all 0.3s ease;
       }
 
       &:hover {
         &:before {
-          background-color: #1F1F1F;
-          -webkit-box-shadow: 0px 0px 0px 0px #0DFDE9;
-          box-shadow: 0px 0px 0px 0px #0DFDE9;
+          background-color: $background;
+          -webkit-box-shadow: 0px 0px 0px 0px $color-cyan;
+          box-shadow: 0px 0px 0px 0px $color-cyan;
           filter: blur(0px);
         }
 
         &::after {
           width: 80%;
-          border-bottom: 1px solid #0DFDE9;
-          border-top: 1px solid #0DFDE9;
+          border-bottom: 1px solid $color-cyan;
+          border-top: 1px solid $color-cyan;
         }
 
         span {
-          color: #0DFDE9;
+          color: $color-cyan;
         }
       }
 
@@ -169,14 +193,14 @@ header {
       transition: background-color .5s ease, max-height 1s ease, padding-top 0.6s ease;
 
       a {
-        color: white;
+        color: $color-white;
         padding: 12px 16px;
         text-decoration: none;
         display: block;
       }
 
       a:hover {
-        text-shadow: #ffffff7a 0px 0px 5px, #ffffff7a 0px 0px 10px, #ffffff7a 0px 0px 15px, 0px 0px 20px, #0DFDE9 0px 0px 30px, #0DFDE9 0px 0px 40px, #0DFDE9 0px 0px 50px, #0DFDE9 0px 0px 75px;
+        text-shadow: #ffffff7a 0px 0px 5px, #ffffff7a 0px 0px 10px, #ffffff7a 0px 0px 15px, 0px 0px 20px, $color-cyan 0px 0px 30px, $color-cyan 0px 0px 40px, $color-cyan 0px 0px 50px, $color-cyan 0px 0px 75px;
       }
     }
 
@@ -225,7 +249,7 @@ header {
       div {
         width: 25px;
         height: 3px;
-        background-color: white;
+        background-color: $color-white;
         margin: 5px;
         transition: all 0.3s ease;
       }
@@ -265,13 +289,42 @@ header {
 }
 
 #home {
-  // display: flex;
-  // height: 100vh;
 
   .content {
     display: flex;
     justify-content: space-between;
-    color: white;
+    color: $color-white;
+
+    .blob {
+      position: absolute;
+      height: 30vw;
+      top: -150px;
+      left: -250px;
+      opacity: .6;
+      filter: blur(50px);
+      z-index: -1;
+
+      &-1 {
+        height: 20vw;
+        right: 190px;
+        top: 150px;
+        left: auto;
+      }
+
+      &-2 {
+        height: 20vw;
+        right: 450px;
+        top: 650px;
+        left: auto;
+      }
+
+      &-3 {
+        height: 20vw;
+        right: -100px;
+        top: auto;
+        bottom: -150px;
+        left: auto;}
+    }
 
     .left,
     .right {
@@ -305,12 +358,12 @@ header {
         justify-content: center;
         align-items: center;
         border-radius: 45px 45px 45px 45px;
-        border: 0px solid #1F1F1F;
+        border: 0px solid $color-dark;
         cursor: pointer;
         transition: all 0.3s ease;
 
         .fas {
-          color: #1F1F1F;
+          color: $color-dark;
           margin-left: 10px;
           transition: all .3s ease;
         }
@@ -323,9 +376,9 @@ header {
           width: 100%;
           border-radius: 45px 45px 45px 45px;
           height: 100%;
-          background-color: #0DFDE9;
-          -webkit-box-shadow: 5px 5px 30px 5px #0DFDE9;
-          box-shadow: 5px 5px 30px 5px #0DFDE9;
+          background-color: $color-cyan;
+          -webkit-box-shadow: 5px 5px 30px 5px $color-cyan;
+          box-shadow: 5px 5px 30px 5px $color-cyan;
           filter: blur(5px);
           z-index: 1;
           transition: all 0.3s ease;
@@ -337,32 +390,32 @@ header {
           position: absolute;
           bottom: 0;
           width: 0%;
-          border-bottom: 0px solid #0DFDE9;
-          border-top: 0px solid #0DFDE9;
+          border-bottom: 0px solid $color-cyan;
+          border-top: 0px solid $color-cyan;
           z-index: 1;
           transition: all 0.3s ease;
         }
 
         &:hover {
           .fas {
-            color: #0dfde9;
+            color: $color-cyan;
           }
 
           &:before {
-            background-color: #1F1F1F;
-            -webkit-box-shadow: 0px 0px 0px 0px #0DFDE9;
-            box-shadow: 0px 0px 0px 0px #0DFDE9;
+            background-color: $background;
+            -webkit-box-shadow: 0px 0px 0px 0px $color-cyan;
+            box-shadow: 0px 0px 0px 0px $color-cyan;
             filter: blur(0px);
           }
 
           &::after {
             width: 80%;
-            border-bottom: 1px solid #0DFDE9;
-            border-top: 1px solid #0DFDE9;
+            border-bottom: 1px solid $color-cyan;
+            border-top: 1px solid $color-cyan;
           }
 
           a {
-            color: #0DFDE9;
+            color: $color-cyan;
           }
         }
 
@@ -372,7 +425,7 @@ header {
         a {
           position: relative;
           z-index: 1;
-          color: #1F1F1F;
+          color: $color-dark;
           font-size: 1.15em;
           font-weight: bold;
           text-decoration: none;
@@ -392,7 +445,7 @@ header {
         position: absolute;
         width: 300px;
         height: 600px;
-        background: linear-gradient(-60deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0.005) 100%);
+        background: linear-gradient(-60deg, rgba($rgba3, $rgba3, $rgba3, 0.1) 0%, rgba($rgba3, $rgba3, $rgba3, 0.1) 40%, rgba($rgba3, $rgba3, $rgba3, 0.005) 100%);
         border-radius: 20px;
         filter: blur(2.5px);
         transform: rotateX(-30deg) rotateY(30deg) rotateZ(40deg) rotate(-26deg);
@@ -400,11 +453,11 @@ header {
 
         &:hover {
           // transform: rotateX(-20deg) rotateY(20deg) rotateZ(30deg) rotate(-26deg);
-          -moz-transform: scale(1.3);
-          -webkit-transform: scale(1.3);
-          -o-transform: scale(1.3);
-          -ms-transform: scale(1.3);
-          transform: scale(1.3);
+          -moz-transform: rotateX(-30deg) rotateY(30deg) rotateZ(40deg) rotate(-26deg) scale(1.3);
+          -webkit-transform: rotateX(-30deg) rotateY(30deg) rotateZ(40deg) rotate(-26deg) scale(1.3);
+          -o-transform: rotateX(-30deg) rotateY(30deg) rotateZ(40deg) rotate(-26deg) scale(1.3);
+          -ms-transform: rotateX(-30deg) rotateY(30deg) rotateZ(40deg) rotate(-26deg) scale(1.3);
+          transform: rotateX(-30deg) rotateY(30deg) rotateZ(40deg) rotate(-26deg) scale(1.3);
 
         }
 
@@ -418,7 +471,7 @@ header {
         }
 
         &-2 {
-          background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0.1) 100%);
+          background: linear-gradient(90deg, rgba($rgba3, $rgba3, $rgba3, 0.2) 0%, rgba($rgba3, $rgba3, $rgba3, 0.1) 40%, rgba($rgba3, $rgba3, $rgba3, 0.1) 100%);
           top: 260px;
           left: 63vw;
 
@@ -429,7 +482,7 @@ header {
 
         &-3 {
           height: 20px;
-          background: rgba(255, 255, 255, 0.4);
+          background: rgba($rgba3, $rgba3, $rgba3, 0.4);
           top: 760px;
           left: 56.5vw;
           filter: blur(0px);
@@ -442,7 +495,7 @@ header {
         &-4 {
           height: 8px;
           width: 276px;
-          background: rgba(255, 255, 255, 1);
+          background: $color-white;
           top: 765px;
           left: 57.1vw;
           filter: blur(0px);
@@ -453,7 +506,7 @@ header {
         }
 
         &-5 {
-          background: linear-gradient(75deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 60%, rgba(255, 255, 255, 0.07) 100%);
+          background: linear-gradient(75deg, rgba($rgba3, $rgba3, $rgba3, 0.2) 0%, rgba($rgba3, $rgba3, $rgba3, 0.2) 60%, rgba($rgba3, $rgba3, $rgba3, 0.07) 100%);
           ;
           height: 130px;
           width: 130px;
@@ -463,7 +516,7 @@ header {
         }
 
         &-6 {
-          background: linear-gradient(75deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 60%, rgba(255, 255, 255, 0.07) 100%);
+          background: linear-gradient(75deg, rgba($rgba3, $rgba3, $rgba3, 0.2) 0%, rgba($rgba3, $rgba3, $rgba3, 0.2) 60%, rgba($rgba3, $rgba3, $rgba3, 0.07) 100%);
           ;
           height: 130px;
           width: 130px;
@@ -473,7 +526,7 @@ header {
         }
 
         &-7 {
-          background: linear-gradient(75deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 60%, rgba(255, 255, 255, 0.07) 100%);
+          background: linear-gradient(75deg, rgba($rgba3, $rgba3, $rgba3, 0.2) 0%, rgba($rgba3, $rgba3, $rgba3, 0.2) 60%, rgba($rgba3, $rgba3, $rgba3, 0.07) 100%);
           ;
           height: 130px;
           width: 130px;
@@ -483,7 +536,7 @@ header {
         }
 
         &-8 {
-          background: linear-gradient(45deg, rgba(0, 249, 89, 1) 0%, rgba(11, 227, 148, 1) 100%);
+          background: linear-gradient(45deg, #00F959 0%, #0be595 100%);
           ;
           height: 200px;
           width: 200px;
@@ -506,7 +559,7 @@ header {
           display: flex;
           justify-content: space-around;
           align-items: center;
-          background: linear-gradient(75deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 60%, rgba(255, 255, 255, 0.07) 100%);
+          background: linear-gradient(75deg, rgba($rgba3, $rgba3, $rgba3, 0.2) 0%, rgba($rgba3, $rgba3, $rgba3, 0.2) 60%, rgba($rgba3, $rgba3, $rgba3, 0.07) 100%);
           ;
           height: 130px;
           width: 300px;
@@ -521,7 +574,7 @@ header {
             border-radius: 15px;
             height: 60px;
             width: 60px;
-            background: linear-gradient(75deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.07) 100%);
+            background: linear-gradient(75deg, rgba($rgba3, $rgba3, $rgba3, 0.2) 0%, rgba($rgba3, $rgba3, $rgba3, 0.07) 100%);
 
             .fas {
               opacity: .3;
@@ -534,7 +587,7 @@ header {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          background: white;
+          background: $color-white;
           ;
           height: 50px;
           width: 350px;
@@ -551,7 +604,7 @@ header {
             padding: 0 20px;
 
             .fas {
-              color: rgb(31, 31, 31);
+              color: $background;
               opacity: 1;
               font-size: 1.6em;
             }
@@ -561,7 +614,7 @@ header {
               height: 15px;
               width: 15px;
               border-radius: 45px;
-              background-color: rgb(0, 249, 89);
+              background-color: #00F959;
             }
           }
 
@@ -570,7 +623,7 @@ header {
             height: 15px;
             width: 15px;
             border-radius: 45px;
-            background-color: #befa19a8;
+            background-color: #befa19;
           }
 
           .punkt3 {
@@ -578,7 +631,7 @@ header {
             height: 15px;
             width: 15px;
             border-radius: 45px;
-            background-color: #fa0000a8;
+            background-color: #fa0000;
           }
         }
       }
