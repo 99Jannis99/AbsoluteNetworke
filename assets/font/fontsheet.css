@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Rounded Elegance';
+    src: url('RoundedElegance-Regular.woff2') format('woff2'),
+        url('RoundedElegance-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

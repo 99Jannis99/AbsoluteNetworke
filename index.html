@@ -6,7 +6,8 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>AbsoluteNetworke</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+  <link rel="stylesheet" href="assets/font/fontsheet.css">
   <link rel="stylesheet" href="css/styles.css">
   <script src='main.js'></script>
 </head>
@@ -18,12 +19,19 @@
         <img src="/assets/logo.png" class="logo" alt="Logo">
       </div>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#punkt1">Punkt 1</a></li>
+        <li><a href="#home">Home</a></li>
         <li><a href="#punkt2">Punkt 2</a></li>
         <li><a href="#punkt3">Punkt 3</a></li>
         <li><a href="#punkt4">Punkt 4</a></li>
         <li><a href="#punkt5">Punkt 5</a></li>
       </ul>
+      <div class="contact">
+        <button><span>Kontaktiere uns</span></button>
+        <div class="dropdown" id="dropdown">
+          <a href="mailto:info@deinewebsite.com">Email</a>
+          <a href="tel:1234567890">Telefon</a>
+        </div>
+      </div>
       <div class="burger" id="burger">
         <div></div>
         <div></div>
@@ -31,19 +39,112 @@
       </div>
     </nav>
   </header>
+  <section id="home">
+    <div class="content">
+      <div class="left">
+        <h1>Ihr Partner <br /> für Digitale Exzellenz</h1>
+        <p>Willkommen bei AbsoluteNetwork, Ihrem Expertenteam für Web- und App-Entwicklung. Mit jahrelanger Erfahrung
+          und einem leidenschaftlichen Engagement für Qualität und Innovation bringen wir Ihre digitale Präsenz auf das
+          nächste Level.</p>
+        <div class="cta">
+          <a href="#">Entdecken Sie unsere Webdesign & Webentwicklung Services <i class="fas fa-solid fa-play"></i></a>
+        </div>
+        <div class="cta">
+          <a href="#">Entdecken Sie Ihre App-Lösung mit uns <i class="fas fa-solid fa-play"></i></a>
+        </div>
+
+      </div>
+      <div class="right">
+        <div class="phone phone-1"></div>
+        <div class="phone phone-2"></div>
+        <div class="phone phone-3"></div>
+        <div class="phone phone-4"></div>
+        <div class="phone phone-5"></div>
+        <div class="phone phone-6"></div>
+        <div class="phone phone-7"></div>
+        <div class="phone phone-8">
+          <div class="child"></div>
+        </div>
+        <div class="phone phone-9">
+          <div class="child">
+            <i class="fas fa-camera"></i>
+          </div>
+          <div class="child">
+            <i class="fas fa-globe"></i>
+          </div>
+          <div class="child">
+            <i class="fas fa-cog"></i>
+          </div>
+
+        </div>
+
+        <div class="phone phone-10">
+          <div class="child">
+            <i class="fas fa-bars"></i>
+          </div>
+          <div class=" child child-1">
+            <div class="punkt1"></div>
+            <div class="punkt2"></div>
+            <div class="punkt3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  
+
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const burger = document.getElementById('burger');
-      const navLinks = document.getElementById('nav-links');
-
-      burger.addEventListener('click', () => {
-        // Toggle Nav
-        navLinks.classList.toggle('nav-active');
-
-        // Burger Animation
-        burger.classList.toggle('toggle');
+    $(document).ready(function () {
+      $('#burger').on('click', function () {
+        $('#nav-links').toggleClass('active');
+        $(this).toggleClass('toggle');
       });
+      $('.contact button').on('click', function () {
+        $('#dropdown').toggleClass('show');
+      });
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          const id = entry.target.getAttribute('id');
+          const navLink = $(`.nav-links li a[href="#${id}"]`);
+          if (entry.isIntersecting) {
+            navLink.addClass('active');
+          } else {
+            navLink.removeClass('active');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      $('section').each(function () {
+        observer.observe(this);
+      });
+
+
     });
+  </script>
+  <script>
+   $(function() {
+  $('.phone').each(function() {
+    var $this = $(this);
+    var initialPosition = $this.offset();
+    $this.data('initialPosition', initialPosition);
+  });
+
+  $('.phone').draggable({
+    start: function() {
+      // $(this).css('transition', 'none');
+    },
+    stop: function() {
+      var $this = $(this);
+      var initialPosition = $this.data('initialPosition');
+      // $this.css('transition', 'top 0.5s ease-out, left 0.5s ease-out');
+      $this.css(initialPosition);
+    }
+  });
+});
 
   </script>
 </body>
