@@ -1,21 +1,18 @@
 $breakpoint: 1110px;
 $breakpoint2: 771px;
 
-$background: #1F1F1F;
-$color-dark: #1F1F1F;
-$color-cyan: #0DFDE9;
-$color-white: #ffffff;
-$rgba3: 255;
-
-// $background: #ffffff;
-// $color-dark: #1F1F1F;
-// $color-cyan: #0DFDE9;
-// $color-white: #1F1F1F;
-// $rgba3: 0;
-
+:root {
+  --background: #111111;
+  --color-dark: #1F1F1F;
+  --color-bright: #F6F6F6;
+  --color-primary: #0BE394;
+  --color-secondary: #00F959;
+  --color-tetiary: #0BE394;
+  --rgba3: 255;
+}
 
 html {
-  overflow-x: hidden;
+  // overflow-x: over;
 }
 
 * {
@@ -24,32 +21,35 @@ html {
   box-sizing: border-box;
 }
 
-/* ===== Scrollbar CSS ===== */
+body {
+  background-color: var(--background);
+  font-family: "Rounded Elegance";
+  background-size: 100vw;
+  overflow-y: overlay;
+  overflow-x: hidden;
+  height: 300vh;
+  transition: all 0.5s ease;
+}
+
+// /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {
   scrollbar-width: auto;
-  scrollbar-color: #0dfde9 #0dfde9;
+  scrollbar-color: var(--color-primary) var(--color-primary);
 }
 
 /* Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 16px;
+::-webkit-scrollbar {
+  width: 12px;
 }
 
-*::-webkit-scrollbar-track {
-  background: rgba(31, 31, 31, 1);
+::-webkit-scrollbar-track {
+  background: transparent
 }
 
-*::-webkit-scrollbar-thumb {
-  background-color: #0dfde9;
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
   border-radius: 15px;
-  border: 3px solid rgba(31, 31, 31, 1);
-}
-
-body {
-  overflow-x: hidden;
-  background-color: $background;
-  font-family: "Rounded Elegance";
 }
 
 section {
@@ -64,7 +64,7 @@ header {
   position: fixed;
   width: 100%;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0);
+  background: rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0);
 }
 
 
@@ -79,20 +79,8 @@ header {
     display: flex;
     z-index: 100;
 
-    @function is-light($color) {
-      $r: red($color);
-      $g: green($color);
-      $b: blue($color);
-      $brightness: ($r * 299 + $g * 587 + $b * 114) / 1000;
-      @return $brightness >155;
-    }
-
     .logo {
       width: 250px;
-
-      @if is-light($background) {
-        filter: invert(.9);
-      }
     }
   }
 
@@ -106,7 +94,7 @@ header {
     a {
       padding: 0 20px;
       top: 20px;
-      color: $color-white;
+      color: var(--color-bright);
       opacity: .5;
       font-size: 18px;
       font-weight: bold;
@@ -115,7 +103,7 @@ header {
 
       &:hover {
         padding-top: -20px;
-        text-shadow: #ffffff7a 0px 0px 5px, #ffffff7a 0px 0px 10px, #ffffff7a 0px 0px 15px, 0px 0px 20px, $color-cyan 0px 0px 30px, $color-cyan 0px 0px 40px, $color-cyan 0px 0px 50px, $color-cyan 0px 0px 75px;
+        text-shadow: #ffffff7a 0px 0px 5px, #ffffff7a 0px 0px 10px, #ffffff7a 0px 0px 15px, 0px 0px 20px, var(--color-primary) 0px 0px 30px, var(--color-primary) 0px 0px 40px, var(--color-primary) 0px 0px 50px, var(--color-primary) 0px 0px 75px;
       }
 
       &.active {
@@ -124,6 +112,17 @@ header {
 
     }
 
+    #home {
+      &:hover {
+        --background: #f3584f;
+        --color-dark: #000201;
+        --color-bright: #f7f1ec;
+        --color-primary: #e6d7af;
+        --color-secondary: #e6d7af;
+        --color-tetiary: #f7f1ec;
+        --rgba3: 255;
+      }
+    }
 
 
   }
@@ -136,7 +135,7 @@ header {
       position: relative;
       width: 250px;
       height: 45px;
-      color: $color-dark;
+      color: var(--color-dark);
       font-weight: bold;
       display: flex;
       justify-content: center;
@@ -156,9 +155,9 @@ header {
         width: 100%;
         border-radius: 40px 0px 40px 0px;
         height: 100%;
-        background-color: $color-cyan;
-        -webkit-box-shadow: 5px 5px 30px 5px $color-cyan;
-        box-shadow: 5px 5px 30px 5px $color-cyan;
+        background-color: var(--color-primary);
+        -webkit-box-shadow: 5px 5px 30px 5px var(--color-primary);
+        box-shadow: 5px 5px 30px 5px var(--color-primary);
         filter: blur(5px);
         z-index: 1;
         transition: all 0.3s ease;
@@ -170,28 +169,28 @@ header {
         position: absolute;
         bottom: 0;
         width: 0%;
-        border-bottom: 0px solid $color-cyan;
-        border-top: 0px solid $color-cyan;
+        border-bottom: 0px solid var(--color-primary);
+        border-top: 0px solid var(--color-primary);
         z-index: 1;
         transition: all 0.3s ease;
       }
 
       &:hover {
         &:before {
-          background-color: $background;
-          -webkit-box-shadow: 0px 0px 0px 0px $color-cyan;
-          box-shadow: 0px 0px 0px 0px $color-cyan;
+          background-color: var(--background);
+          -webkit-box-shadow: 0px 0px 0px 0px var(--color-primary);
+          box-shadow: 0px 0px 0px 0px var(--color-primary);
           filter: blur(0px);
         }
 
         &::after {
           width: 80%;
-          border-bottom: 1px solid $color-cyan;
-          border-top: 1px solid $color-cyan;
+          border-bottom: 1px solid var(--color-primary);
+          border-top: 1px solid var(--color-primary);
         }
 
         span {
-          color: $color-cyan;
+          color: var(--color-primary);
         }
       }
 
@@ -215,14 +214,14 @@ header {
       transition: background-color .5s ease, max-height 1s ease, padding-top 0.6s ease;
 
       a {
-        color: $color-white;
+        color: var(--color-bright);
         padding: 12px 16px;
         text-decoration: none;
         display: block;
       }
 
       a:hover {
-        text-shadow: #ffffff7a 0px 0px 5px, #ffffff7a 0px 0px 10px, #ffffff7a 0px 0px 15px, 0px 0px 20px, $color-cyan 0px 0px 30px, $color-cyan 0px 0px 40px, $color-cyan 0px 0px 50px, $color-cyan 0px 0px 75px;
+        text-shadow: #ffffff7a 0px 0px 5px, #ffffff7a 0px 0px 10px, #ffffff7a 0px 0px 15px, 0px 0px 20px, var(--color-primary) 0px 0px 30px, var(--color-primary) 0px 0px 40px, var(--color-primary) 0px 0px 50px, var(--color-primary) 0px 0px 75px;
       }
     }
 
@@ -271,7 +270,7 @@ header {
       div {
         width: 25px;
         height: 3px;
-        background-color: $color-white;
+        background-color: var(--color-bright);
         margin: 5px;
         transition: all 0.3s ease;
       }
@@ -315,9 +314,10 @@ header {
   .content {
     display: flex;
     justify-content: space-between;
-    color: $color-white;
+    color: var(--color-bright);
 
     .blob {
+      fill: var(--color-secondary);
       position: absolute;
       height: 30vw;
       top: -150px;
@@ -325,8 +325,10 @@ header {
       opacity: .6;
       filter: blur(50px);
       z-index: -1;
+      transition: all .5s ease;
 
       &-1 {
+        fill: var(--color-tetiary);
         height: 20vw;
         right: 190px;
         top: 150px;
@@ -334,6 +336,7 @@ header {
       }
 
       &-2 {
+        fill: var(--color-secondary);
         height: 20vw;
         right: 450px;
         top: 650px;
@@ -341,6 +344,7 @@ header {
       }
 
       &-3 {
+        fill: var(--color-tetiary);
         height: 20vw;
         right: -100px;
         top: auto;
@@ -381,12 +385,12 @@ header {
         justify-content: center;
         align-items: center;
         border-radius: 45px 45px 45px 45px;
-        border: 0px solid $color-dark;
+        border: 0px solid var(--color-dark);
         cursor: pointer;
         transition: all 0.3s ease;
 
         .fas {
-          color: $color-dark;
+          color: var(--color-dark);
           margin-left: 10px;
           transition: all .3s ease;
         }
@@ -399,9 +403,9 @@ header {
           width: 100%;
           border-radius: 45px 45px 45px 45px;
           height: 100%;
-          background-color: $color-cyan;
-          -webkit-box-shadow: 5px 5px 30px 5px $color-cyan;
-          box-shadow: 5px 5px 30px 5px $color-cyan;
+          background-color: var(--color-primary);
+          -webkit-box-shadow: 5px 5px 30px 5px var(--color-primary);
+          box-shadow: 5px 5px 30px 5px var(--color-primary);
           filter: blur(5px);
           z-index: 1;
           transition: all 0.3s ease;
@@ -413,32 +417,32 @@ header {
           position: absolute;
           bottom: 0;
           width: 0%;
-          border-bottom: 0px solid $color-cyan;
-          border-top: 0px solid $color-cyan;
+          border-bottom: 0px solid var(--color-primary);
+          border-top: 0px solid var(--color-primary);
           z-index: 1;
           transition: all 0.3s ease;
         }
 
         &:hover {
           .fas {
-            color: $color-cyan;
+            color: var(--color-primary);
           }
 
           &:before {
-            background-color: $background;
-            -webkit-box-shadow: 0px 0px 0px 0px $color-cyan;
-            box-shadow: 0px 0px 0px 0px $color-cyan;
+            background-color: var(--background);
+            -webkit-box-shadow: 0px 0px 0px 0px var(--color-primary);
+            box-shadow: 0px 0px 0px 0px var(--color-primary);
             filter: blur(0px);
           }
 
           &::after {
             width: 80%;
-            border-bottom: 1px solid $color-cyan;
-            border-top: 1px solid $color-cyan;
+            border-bottom: 1px solid var(--color-primary);
+            border-top: 1px solid var(--color-primary);
           }
 
           a {
-            color: $color-cyan;
+            color: var(--color-primary);
           }
         }
 
@@ -448,7 +452,7 @@ header {
         a {
           position: relative;
           z-index: 1;
-          color: $color-dark;
+          color: var(--color-dark);
           font-size: 1.15em;
           font-weight: bold;
           text-decoration: none;
@@ -468,7 +472,7 @@ header {
         position: absolute;
         width: 300px;
         height: 600px;
-        background: linear-gradient(-60deg, rgba($rgba3, $rgba3, $rgba3, 0.1) 0%, rgba($rgba3, $rgba3, $rgba3, 0.1) 40%, rgba($rgba3, $rgba3, $rgba3, 0.005) 100%);
+        background: linear-gradient(-60deg, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.1) 0%, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.1) 40%, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.005) 100%);
         border-radius: 20px;
         filter: blur(2.5px);
         transform: rotateX(-30deg) rotateY(30deg) rotateZ(40deg) rotate(-26deg);
@@ -494,7 +498,7 @@ header {
         }
 
         &-2 {
-          background: linear-gradient(90deg, rgba($rgba3, $rgba3, $rgba3, 0.2) 0%, rgba($rgba3, $rgba3, $rgba3, 0.1) 40%, rgba($rgba3, $rgba3, $rgba3, 0.1) 100%);
+          background: linear-gradient(90deg, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.2) 0%, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.1) 40%, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.1) 100%);
           top: 260px;
           left: 63vw;
 
@@ -505,7 +509,7 @@ header {
 
         &-3 {
           height: 20px;
-          background: rgba($rgba3, $rgba3, $rgba3, 0.4);
+          background: rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.4);
           top: 760px;
           left: 56.5vw;
           filter: blur(0px);
@@ -518,7 +522,7 @@ header {
         &-4 {
           height: 8px;
           width: 276px;
-          background: $color-white;
+          background: var(--color-bright);
           top: 765px;
           left: 57.1vw;
           filter: blur(0px);
@@ -529,7 +533,7 @@ header {
         }
 
         &-5 {
-          background: linear-gradient(75deg, rgba($rgba3, $rgba3, $rgba3, 0.2) 0%, rgba($rgba3, $rgba3, $rgba3, 0.2) 60%, rgba($rgba3, $rgba3, $rgba3, 0.07) 100%);
+          background: linear-gradient(75deg, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.2) 0%, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.2) 60%, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.07) 100%);
           ;
           height: 130px;
           width: 130px;
@@ -539,7 +543,7 @@ header {
         }
 
         &-6 {
-          background: linear-gradient(75deg, rgba($rgba3, $rgba3, $rgba3, 0.2) 0%, rgba($rgba3, $rgba3, $rgba3, 0.2) 60%, rgba($rgba3, $rgba3, $rgba3, 0.07) 100%);
+          background: linear-gradient(75deg, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.2) 0%, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.2) 60%, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.07) 100%);
           ;
           height: 130px;
           width: 130px;
@@ -549,7 +553,7 @@ header {
         }
 
         &-7 {
-          background: linear-gradient(75deg, rgba($rgba3, $rgba3, $rgba3, 0.2) 0%, rgba($rgba3, $rgba3, $rgba3, 0.2) 60%, rgba($rgba3, $rgba3, $rgba3, 0.07) 100%);
+          background: linear-gradient(75deg, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.2) 0%, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.2) 60%, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.07) 100%);
           ;
           height: 130px;
           width: 130px;
@@ -559,8 +563,7 @@ header {
         }
 
         &-8 {
-          background: linear-gradient(45deg, #00F959 0%, #0be595 100%);
-          ;
+          background: linear-gradient(45deg, var(--color-secondary) 0%, var(--color-tetiary) 100%);
           height: 200px;
           width: 200px;
           top: 410px;
@@ -582,7 +585,7 @@ header {
           display: flex;
           justify-content: space-around;
           align-items: center;
-          background: linear-gradient(75deg, rgba($rgba3, $rgba3, $rgba3, 0.2) 0%, rgba($rgba3, $rgba3, $rgba3, 0.2) 60%, rgba($rgba3, $rgba3, $rgba3, 0.07) 100%);
+          background: linear-gradient(75deg, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.2) 0%, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.2) 60%, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.07) 100%);
           ;
           height: 130px;
           width: 300px;
@@ -597,7 +600,7 @@ header {
             border-radius: 15px;
             height: 60px;
             width: 60px;
-            background: linear-gradient(75deg, rgba($rgba3, $rgba3, $rgba3, 0.2) 0%, rgba($rgba3, $rgba3, $rgba3, 0.07) 100%);
+            background: linear-gradient(75deg, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.2) 0%, rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0.07) 100%);
 
             .fas {
               opacity: .3;
@@ -610,7 +613,7 @@ header {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          background: $color-white;
+          background: var(--color-bright);
           ;
           height: 50px;
           width: 350px;
@@ -627,7 +630,7 @@ header {
             padding: 0 20px;
 
             .fas {
-              color: $background;
+              color: var(--background);
               opacity: 1;
               font-size: 1.6em;
             }
