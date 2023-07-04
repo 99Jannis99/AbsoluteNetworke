@@ -54,7 +54,7 @@ p {
 
 header {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   z-index: 1000;
   background: rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0);
 }
@@ -294,6 +294,32 @@ header {
   bottom: -150px;
   left: auto;
 }
+@media (max-width: 1110px) {
+  #home .content .blob {
+    height: 50vw;
+    top: auto;
+    left: auto;
+    right: 0px;
+  }
+  #home .content .blob-1 {
+    height: 50vw;
+    top: 0px;
+    left: 0px;
+  }
+  #home .content .blob-2 {
+    height: 50vw;
+    right: 0px;
+    top: 50vh;
+    left: auto;
+  }
+  #home .content .blob-3 {
+    height: 50vw;
+    right: auto;
+    top: auto;
+    bottom: 5vh;
+    left: auto;
+  }
+}
 #home .content .left,
 #home .content .right {
   width: 50%;
@@ -382,24 +408,6 @@ header {
   font-weight: bold;
   text-decoration: none;
   transition: all 0.3s ease;
-}
-@media (max-width: 1110px) {
-  #home .content {
-    flex-direction: column;
-    padding-top: 100px;
-  }
-  #home .content .left,
-  #home .content .right {
-    width: 100%;
-    height: auto;
-  }
-  #home .content .left h1 {
-    font-size: 2em;
-  }
-  #home .content .left p {
-    font-size: 1em;
-    padding: 20px 0px 20px 0;
-  }
 }
 #home .content .right .phone {
   position: absolute;
@@ -563,4 +571,25 @@ header {
   width: 15px;
   border-radius: 45px;
   background-color: #fa0000;
+}
+@media (max-width: 1110px) {
+  #home .content {
+    flex-direction: column;
+    padding-top: 100px;
+  }
+  #home .content .left,
+  #home .content .right {
+    width: 100%;
+    height: auto;
+  }
+  #home .content .left h1 {
+    font-size: 2em;
+  }
+  #home .content .left p {
+    font-size: 1em;
+    padding: 20px 0px 20px 0;
+  }
+  #home .content .right {
+    display: none;
+  }
 }

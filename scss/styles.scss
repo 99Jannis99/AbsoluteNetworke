@@ -12,7 +12,7 @@ $breakpoint2: 771px;
 }
 
 html {
-  // overflow-x: over;
+  // overflow-x: hidden;
 }
 
 * {
@@ -62,7 +62,7 @@ p {
 
 header {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   z-index: 1000;
   background: rgba(var(--rgba3), var(--rgba3), var(--rgba3), 0);
 }
@@ -353,6 +353,34 @@ header {
         bottom: -150px;
         left: auto;
       }
+
+      @media (max-width: $breakpoint) {
+        height: 50vw;
+        top: auto;
+        left: auto;
+        right: 0px;
+
+        &-1 {
+          height: 50vw;
+          top: 0px;
+          left: 0px;
+        }
+
+        &-2 {
+          height: 50vw;
+          right: 0px;
+          top: 50vh;
+          left: auto;
+        }
+
+        &-3 {
+          height: 50vw;
+          right: auto;
+          top: auto;
+          bottom: 5vh;
+          left: auto;
+        }
+      }
     }
 
     .left,
@@ -464,25 +492,7 @@ header {
       }
 
     }
-    @media (max-width: $breakpoint) {
-      flex-direction: column;
-      padding-top: 100px;
-      .left,
-      .right {
-        width: 100%;
-        height: auto;
-      }
-      .left{
-        h1 {
-          font-size: 2em;
-        }
-  
-        p {
-          font-size: 1em;
-          padding: 20px 0px 20px 0;
-        }
-      }
-    }
+
     .right {
       .phone {
         position: absolute;
@@ -676,6 +686,32 @@ header {
             background-color: #fa0000;
           }
         }
+      }
+    }
+
+    @media (max-width: $breakpoint) {
+      flex-direction: column;
+      padding-top: 100px;
+
+      .left,
+      .right {
+        width: 100%;
+        height: auto;
+      }
+
+      .left {
+        h1 {
+          font-size: 2em;
+        }
+
+        p {
+          font-size: 1em;
+          padding: 20px 0px 20px 0;
+        }
+      }
+
+      .right {
+        display: none;
       }
     }
   }
