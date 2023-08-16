@@ -186,49 +186,137 @@
       </div>
     </div>
   </section>
-  <script>
-    const slider = document.querySelector(".items");
-    const slides = document.querySelectorAll(".item");
-    const button = document.querySelectorAll(".button");
-
-    let current = 0;
-    let prev = 4;
-    let next = 1;
-
-    for (let i = 0; i < button.length; i++) {
-      button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
-    }
-
-    const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
-
-    const gotoNext = () => current < 4 ? gotoNum(current + 1) : gotoNum(0);
-
-    const gotoNum = number => {
-      current = number;
-      prev = current - 1;
-      next = current + 1;
-
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].classList.remove("active");
-        slides[i].classList.remove("prev");
-        slides[i].classList.remove("next");
-      }
-
-      if (next == 5) {
-        next = 0;
-      }
-
-      if (prev == -1) {
-        prev = 4;
-      }
-
-      slides[current].classList.add("active");
-      slides[prev].classList.add("prev");
-      slides[next].classList.add("next");
-    }</script>
+  <section id="services">
+    <svg class="blob " viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M25.3,-17.7C32.5,-11.2,37.7,-0.7,39,15C40.3,30.8,37.7,51.8,27.6,56.3C17.4,60.9,-0.2,49,-17.5,39.4C-34.9,29.9,-51.9,22.8,-61.7,6.5C-71.4,-9.8,-73.8,-35.3,-62.3,-42.7C-50.8,-50.1,-25.4,-39.5,-8.2,-33C9.1,-26.5,18.2,-24.1,25.3,-17.7Z"
+        transform="translate(100 100)" />
+    </svg>
+    <svg class="blob blob-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M36.1,-31.5C46.3,-15.9,53.9,-1,53.6,17C53.3,35,45.2,56,28.8,66.6C12.3,77.2,-12.5,77.3,-30.3,67.1C-48.1,56.9,-58.9,36.4,-59.9,17.8C-60.8,-0.8,-51.8,-17.5,-40.2,-33.4C-28.6,-49.4,-14.3,-64.6,-0.7,-64C12.9,-63.5,25.8,-47.2,36.1,-31.5Z"
+        transform="translate(100 100)" />
+    </svg>
+    <svg class="blob blob-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M53.4,-42.4C66.9,-25.7,73.9,-3.6,66.9,10.5C59.9,24.7,38.9,30.9,19.6,39.7C0.4,48.5,-17,60,-24.8,55C-32.6,49.9,-30.8,28.3,-37.2,6.6C-43.6,-15,-58.3,-36.5,-53.4,-51.3C-48.6,-66,-24.3,-73.9,-2.2,-72.2C20,-70.5,40,-59.1,53.4,-42.4Z"
+        transform="translate(100 100)" />
+    </svg>
+    <h1>Unsere Dienstleistungen</h1>
+    <div class="content">
+      <div class="card">
+        <div class="front">
+          <div class="background-image"></div>
+          <h2>Webentwicklung</h2>
+          <img src="./svg/services/website.svg" alt="">
+          <p>Maßgeschneiderte Websites für Ihr Unternehmen.</p>
+        </div>
+        <div class="back">
+          <div class="card-back">
+            <p>
+              Unsere Webentwicklungsdienste sind darauf ausgerichtet, Ihre Online-Präsenz zu stärken
+              und Ihre Marke hervorzuheben. Wir erstellen maßgeschneiderte Websites, die nicht nur ästhetisch
+              ansprechend
+              sind, sondern auch funktional und benutzerfreundlich. Egal, ob Sie eine einfache Landingpage oder eine
+              komplexe E-Commerce-Website benötigen, wir haben die Expertise, um Ihre Vision in die Realität umzusetzen.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="front">
+          <div class="background-image"></div>
+          <h2>App-Entwicklung</h2>
+          <img src="./svg/services/app.svg" alt="">
+          <p>Benutzerfreundliche Apps für iOS und Android.</p>
+        </div>
+        <div class="back">
+          <div class="card-back">
+            <p>
+              In der heutigen mobilen Welt ist eine benutzerfreundliche und leistungsstarke App unerlässlich. Unsere
+              App-Entwicklungsdienste umfassen sowohl iOS- als auch Android-Plattformen und sind darauf ausgerichtet,
+              Ihre
+              Kunden zu begeistern und Ihr Geschäft zu fördern. Wir entwickeln Apps, die intuitiv, ansprechend und
+              funktional sind.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="front">
+          <div class="background-image"></div>
+          <h2>UI/UX-Design</h2>
+          <img src="./svg/services/uiux.svg" alt="">
+          <p>Benutzerzentriertes Design für ein angenehmes Erlebnis.</p>
+        </div>
+        <div class="back">
+          <div class="card-back">
+            <p>
+              Ein gutes Design ist mehr als nur Ästhetik. Bei AbsoluteNetwork legen wir großen Wert auf
+              benutzerzentriertes Design. Unsere UI/UX-Design-Dienstleistungen sind darauf ausgerichtet, ein nahtloses
+              und angenehmes Benutzererlebnis zu schaffen, das Ihre Kunden begeistert und sie dazu bringt, immer wieder
+              zurückzukommen.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="front">
+          <div class="background-image"></div>
+          <h2>E-Commerce-Lösungen</h2>
+          <img src="./svg/services/e-commerce.svg" alt="">
+          <p>Leistungsstarke Plattformen für den Online-Handel.</p>
+        </div>
+        <div class="back">
+          <div class="card-back">
+            <p>Der Online-Handel boomt, und wir sind hier, um Ihnen zu helfen, davon zu profitieren. Unsere
+              E-Commerce-Lösungen sind darauf ausgerichtet, Ihnen eine leistungsstarke und benutzerfreundliche Plattform
+              zu bieten, um Ihre Produkte oder Dienstleistungen online zu verkaufen. Von Warenkorbfunktionen bis hin zu
+              sicheren Zahlungsoptionen, wir haben alles im Griff.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="front">
+          <div class="background-image"></div>
+          <h2>Digitales Marketing</h2>
+          <img src="./svg/services/marketing.svg" alt="">
+          <p>Steigern Sie Ihre Online-Präsenz und erreichen Sie Ihre Zielgruppe.</p>
+        </div>
+        <div class="back">
+          <div class="card-back">
+            <p>Eine großartige Website oder App ist nur der Anfang. Unsere digitalen Marketingdienstleistungen sind
+              darauf ausgerichtet, Ihre Online-Präsenz zu stärken und Ihre Zielgruppe zu erreichen. Von
+              Suchmaschinenoptimierung bis hin zu Social Media Marketing, wir haben die Tools und das Know-how, um Ihre
+              Marke ins Rampenlicht zu rücken.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="front">
+          <div class="background-image"></div>
+          <h2>Wartung und Support</h2>
+          <img src="./svg/services/support.svg" alt="">
+          <p>Wir sind für Sie da, um Ihre Website oder App am Laufen zu halten.</p>
+        </div>
+        <div class="back">
+          <div class="card-back">
+            <p>
+              Wir sind nicht nur hier, um Ihnen zu helfen, Ihre digitale Präsenz aufzubauen, sondern auch, um sie zu
+              erhalten. Unsere Wartungs- und Supportdienstleistungen sind darauf ausgerichtet, Ihre Website oder App
+              reibungslos und effizient laufen zu lassen. Egal, ob es um regelmäßige Updates, Sicherheitsüberprüfungen
+              oder technischen Support geht, wir sind für Sie da.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="/main.js"></script>
+  <script src="./js/aboutslider.js"> </script>
+  <script src="./js/services.js"></script>
 </body>
 
 </html>
