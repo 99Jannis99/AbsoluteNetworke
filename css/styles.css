@@ -500,7 +500,7 @@ header {
 #home .content .right .phone-8 .child {
   width: 80%;
   height: 80%;
-  background-image: url("/assets/logoown.png");
+  background-image: url("../assets/logoown.png");
   background-size: contain;
 }
 #home .content .right .phone-9 {
