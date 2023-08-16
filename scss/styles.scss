@@ -78,10 +78,15 @@ header {
   .container {
     display: flex;
     z-index: 100;
+    transition: all 0.5s;
 
     .logo {
       width: 250px;
     }
+  }
+
+  .logoback {
+    background-color: var(--color-dark);
   }
 
   .nav-links {
@@ -91,40 +96,52 @@ header {
     list-style: none;
     transition: all 0.3s ease;
 
-    a {
-      padding: 0 20px;
-      top: 20px;
-      color: var(--color-bright);
-      opacity: .5;
-      font-size: 1.3em;
-      font-weight: bold;
-      text-decoration: none;
-      transition: all 0.3s ease;
+    .nav-links-container {
+      display: flex;
+      height: 50px;
+      align-items: center;
+      padding: 10px 20px;
+      border-radius: 45px 45px 45px 45px;
+      transition: all 0.5s;
 
-      &:hover {
-        padding-top: -20px;
-        text-shadow: #ffffff7a 0px 0px 5px, #ffffff7a 0px 0px 10px, #ffffff7a 0px 0px 15px, 0px 0px 20px, var(--color-primary) 0px 0px 30px, var(--color-primary) 0px 0px 40px, var(--color-primary) 0px 0px 50px, var(--color-primary) 0px 0px 75px;
+      a {
+        padding: 0 20px;
+        top: 20px;
+        color: var(--color-bright);
+        opacity: .5;
+        font-size: 1.3em;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+          padding-top: -20px;
+          text-shadow: #ffffff7a 0px 0px 5px, #ffffff7a 0px 0px 10px, #ffffff7a 0px 0px 15px, 0px 0px 20px, var(--color-primary) 0px 0px 30px, var(--color-primary) 0px 0px 40px, var(--color-primary) 0px 0px 50px, var(--color-primary) 0px 0px 75px;
+        }
+
+        &.active {
+          opacity: 1;
+        }
+
       }
 
-      &.active {
-        opacity: 1;
+      #home {
+        &:hover {
+          --background: #f3584f;
+          --color-dark: #000201;
+          --color-bright: #f7f1ec;
+          --color-primary: #e6d7af;
+          --color-secondary: #e6d7af;
+          --color-tetiary: #f7f1ec;
+          --rgba3: 255;
+        }
       }
 
     }
 
-    #home {
-      &:hover {
-        --background: #f3584f;
-        --color-dark: #000201;
-        --color-bright: #f7f1ec;
-        --color-primary: #e6d7af;
-        --color-secondary: #e6d7af;
-        --color-tetiary: #f7f1ec;
-        --rgba3: 255;
-      }
+    .nav-linksback {
+      background-color: var(--color-dark);
     }
-
-
   }
 
   .contact {

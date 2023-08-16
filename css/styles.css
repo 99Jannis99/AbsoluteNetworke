@@ -69,9 +69,13 @@ header {
 #navbar .container {
   display: flex;
   z-index: 100;
+  transition: all 0.5s;
 }
 #navbar .container .logo {
   width: 250px;
+}
+#navbar .logoback {
+  background-color: var(--color-dark);
 }
 #navbar .nav-links {
   display: flex;
@@ -80,7 +84,15 @@ header {
   list-style: none;
   transition: all 0.3s ease;
 }
-#navbar .nav-links a {
+#navbar .nav-links .nav-links-container {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 45px 45px 45px 45px;
+  transition: all 0.5s;
+}
+#navbar .nav-links .nav-links-container a {
   padding: 0 20px;
   top: 20px;
   color: var(--color-bright);
@@ -90,14 +102,14 @@ header {
   text-decoration: none;
   transition: all 0.3s ease;
 }
-#navbar .nav-links a:hover {
+#navbar .nav-links .nav-links-container a:hover {
   padding-top: -20px;
   text-shadow: rgba(255, 255, 255, 0.4784313725) 0px 0px 5px, rgba(255, 255, 255, 0.4784313725) 0px 0px 10px, rgba(255, 255, 255, 0.4784313725) 0px 0px 15px, 0px 0px 20px, var(--color-primary) 0px 0px 30px, var(--color-primary) 0px 0px 40px, var(--color-primary) 0px 0px 50px, var(--color-primary) 0px 0px 75px;
 }
-#navbar .nav-links a.active {
+#navbar .nav-links .nav-links-container a.active {
   opacity: 1;
 }
-#navbar .nav-links #home:hover {
+#navbar .nav-links .nav-links-container #home:hover {
   --background: #f3584f;
   --color-dark: #000201;
   --color-bright: #f7f1ec;
@@ -105,6 +117,9 @@ header {
   --color-secondary: #e6d7af;
   --color-tetiary: #f7f1ec;
   --rgba3: 255;
+}
+#navbar .nav-links .nav-linksback {
+  background-color: var(--color-dark);
 }
 #navbar .contact {
   position: relative;

@@ -1,4 +1,15 @@
 $(document).ready(function () {
+  // hintergrund für die navbar
+  $(window).scroll(function () {
+    var scrollPos = $(window).scrollTop();
+    if (scrollPos > 150) {
+      $("#logo-container").addClass("logoback");
+      $("#nav-list-container").addClass("nav-linksback");
+    } else {
+      $("#logo-container").removeClass("logoback");
+      $("#nav-list-container").removeClass("nav-linksback");
+    }
+  });
   // Toggle menu on burger click
   $("#burger").on("click", function () {
     $("#nav-links").toggleClass("active");
