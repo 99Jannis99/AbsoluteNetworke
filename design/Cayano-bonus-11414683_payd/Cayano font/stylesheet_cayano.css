@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'cayano';
+    src: url('cayano-Regular.eot');
+    src: url('cayano-Regular.eot?#iefix') format('embedded-opentype'),
+        url('cayano-Regular.woff2') format('woff2'),
+        url('cayano-Regular.woff') format('woff'),
+        url('cayano-Regular.svg#cayano-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
