@@ -51,12 +51,19 @@ section {
 
 p {
   letter-spacing: 1.6px;
+  font-size: 1.4em;
 }
 
 h1 {
-  font-family: "cayano";
+  font-family: "Colombia";
   letter-spacing: 5px;
   font-weight: 500;
+  font-size: 4em;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 2em;
 }
 
 header {
@@ -104,8 +111,9 @@ header {
   top: 20px;
   color: var(--color-bright);
   opacity: 0.5;
-  font-size: 1.3em;
-  font-weight: bold;
+  font-size: 1.7em;
+  font-weight: 900;
+  font-family: "Colombia";
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -143,8 +151,6 @@ header {
   border-radius: 40px 0px 40px 0px;
   border-width: 0px;
   background-color: transparent;
-  font-family: "Montserrat";
-  font-size: 1em;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -185,13 +191,15 @@ header {
   border-bottom: 1px solid var(--color-primary);
   border-top: 1px solid var(--color-primary);
 }
-#navbar .contact button:hover h2 {
+#navbar .contact button:hover h1 {
   color: var(--color-primary);
 }
-#navbar .contact button h2 {
+#navbar .contact button h1 {
   position: relative;
   z-index: 1;
-  font-weight: 400;
+  font-weight: 900;
+  letter-spacing: normal;
+  font-size: 2em;
 }
 #navbar .contact .dropdown {
   padding-top: 50px;
@@ -221,62 +229,6 @@ header {
 }
 #navbar .burger {
   display: none;
-}
-@media (max-width: 1110px) {
-  #navbar .nav-links {
-    position: fixed;
-    right: -100%;
-    height: 100vh;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 40px 0px 0px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  #navbar .nav-links.active {
-    right: -10vw;
-  }
-  #navbar .nav-links li {
-    margin: 20px 20px;
-  }
-  #navbar .burger {
-    display: block;
-    cursor: pointer;
-    z-index: 100;
-  }
-  #navbar .burger div {
-    width: 25px;
-    height: 3px;
-    background-color: var(--color-bright);
-    margin: 5px;
-    transition: all 0.3s ease;
-  }
-  #navbar .burger.toggle div:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-  #navbar .burger.toggle div:nth-child(2) {
-    opacity: 0;
-  }
-  #navbar .burger.toggle div:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-  }
-}
-@media (max-width: 771px) {
-  #navbar {
-    padding: 20px 20px;
-  }
-  #navbar .container {
-    width: 100%;
-    justify-content: center;
-  }
-  #navbar .container .logo {
-    width: 200px;
-  }
-  #navbar .contact {
-    display: none;
-  }
 }
 
 #home .content {
@@ -317,32 +269,6 @@ header {
   bottom: -150px;
   left: auto;
 }
-@media (max-width: 1110px) {
-  #home .content .blob {
-    height: 50vw;
-    top: auto;
-    left: auto;
-    right: 0px;
-  }
-  #home .content .blob-1 {
-    height: 50vw;
-    top: 0px;
-    left: 0px;
-  }
-  #home .content .blob-2 {
-    height: 50vw;
-    right: 0px;
-    top: 50vh;
-    left: auto;
-  }
-  #home .content .blob-3 {
-    height: 50vw;
-    right: auto;
-    top: auto;
-    bottom: 5vh;
-    left: auto;
-  }
-}
 #home .content .left,
 #home .content .right {
   width: 50%;
@@ -352,11 +278,9 @@ header {
   justify-content: center;
 }
 #home .content .left h1 {
-  font-size: 4em;
   line-height: 1.2;
 }
 #home .content .left p {
-  font-size: 1.4em;
   padding: 20px 270px 20px 0;
 }
 #home .content .left .cta {
@@ -427,7 +351,8 @@ header {
   position: relative;
   z-index: 1;
   color: var(--color-dark);
-  font-size: 1.4em;
+  font-family: "Colombia";
+  font-size: 1.7em;
   font-weight: bold;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -595,27 +520,6 @@ header {
   border-radius: 45px;
   background-color: #fa0000;
 }
-@media (max-width: 1110px) {
-  #home .content {
-    flex-direction: column;
-    padding-top: 100px;
-  }
-  #home .content .left,
-  #home .content .right {
-    width: 100%;
-    height: auto;
-  }
-  #home .content .left h1 {
-    font-size: 2em;
-  }
-  #home .content .left p {
-    font-size: 1em;
-    padding: 20px 0px 20px 0;
-  }
-  #home .content .right {
-    display: none;
-  }
-}
 
 #aboutus .content {
   display: flex;
@@ -658,32 +562,6 @@ header {
   left: auto;
   z-index: -1;
 }
-@media (max-width: 1110px) {
-  #aboutus .content .blob {
-    height: 50vw;
-    top: auto;
-    left: auto;
-    right: 0px;
-  }
-  #aboutus .content .blob-1 {
-    height: 50vw;
-    top: 0px;
-    left: 0px;
-  }
-  #aboutus .content .blob-2 {
-    height: 50vw;
-    right: 0px;
-    top: 50vh;
-    left: auto;
-  }
-  #aboutus .content .blob-3 {
-    height: 50vw;
-    right: auto;
-    top: auto;
-    bottom: 5vh;
-    left: auto;
-  }
-}
 #aboutus .content .left,
 #aboutus .content .right {
   width: 50%;
@@ -695,13 +573,11 @@ header {
 #aboutus .content .left h1 {
   position: relative;
   z-index: 5;
-  font-size: 4em;
   line-height: 1.2;
 }
 #aboutus .content .left p {
   position: relative;
   z-index: 5;
-  font-size: 1.4em;
   padding: 20px 270px 20px 0;
 }
 #aboutus .content .left .cta {
@@ -791,7 +667,7 @@ header {
   position: absolute;
   top: 125%;
   left: 57%;
-  font-size: 2em;
+  font-size: 1.7em;
 }
 #aboutus .content .right .items {
   position: absolute;
@@ -821,7 +697,6 @@ header {
 #aboutus .content .right .items .item h2 {
   margin: 20px;
   font-size: 1.8em;
-  font-weight: bold;
 }
 #aboutus .content .right .items .item p {
   font-size: 1.2em;
@@ -884,27 +759,6 @@ header {
 #aboutus .content .right .button-container .button:nth-child(2) {
   float: right;
 }
-@media (max-width: 1110px) {
-  #aboutus .content {
-    flex-direction: column;
-    padding-top: 100px;
-  }
-  #aboutus .content .left,
-  #aboutus .content .right {
-    width: 100%;
-    height: auto;
-  }
-  #aboutus .content .left h1 {
-    font-size: 2em;
-  }
-  #aboutus .content .left p {
-    font-size: 1em;
-    padding: 20px 0px 20px 0;
-  }
-  #aboutus .content .right {
-    display: none;
-  }
-}
 
 #services {
   color: var(--color-bright);
@@ -946,29 +800,9 @@ header {
   --moveX: 50px;
   --moveY: 150px;
 }
-@media (max-width: 1110px) {
-  #services .blob {
-    height: 50vw;
-    top: auto;
-    left: auto;
-    right: 0px;
-  }
-  #services .blob-1 {
-    height: 50vw;
-    top: 0px;
-    left: 0px;
-  }
-  #services .blob-2 {
-    height: 50vw;
-    right: 0px;
-    top: 50vh;
-    left: auto;
-  }
-}
 #services h1 {
   position: relative;
   z-index: 5;
-  font-size: 4em;
   line-height: 1.2;
 }
 #services .content {
@@ -1040,11 +874,7 @@ header {
   height: 20vh;
 }
 #services .content .card h2 {
-  font-size: 2em;
   margin-bottom: 8px;
-}
-#services .content .card p {
-  font-size: 1.4em;
 }
 #services .content .card .card-back {
   position: absolute;
@@ -1056,21 +886,203 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(0px);
   color: var(--color-bright);
 }
-#services .content .card .card-back p {
-  font-size: 1.4em;
-}
 
-@media (max-width: 1024px) {
+@media (max-width: 1110px) {
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.4em;
+  }
+  p {
+    font-size: 1em;
+    padding: 20px 0px 20px 0;
+  }
+  #navbar .nav-links {
+    position: fixed;
+    right: -100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 40px 0px 0px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+  }
+  #navbar .nav-links .nav-links-container {
+    height: auto;
+    align-items: center;
+    padding: 0;
+    flex-direction: column;
+  }
+  #navbar .nav-links.active {
+    right: 20vw;
+  }
+  #navbar .nav-links li {
+    margin: 20px 20px;
+  }
+  #navbar .burger {
+    display: block;
+    cursor: pointer;
+    z-index: 100;
+  }
+  #navbar .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-bright);
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+  #navbar .burger.toggle div:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  #navbar .burger.toggle div:nth-child(2) {
+    opacity: 0;
+  }
+  #navbar .burger.toggle div:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  #home .content {
+    flex-direction: column;
+    padding-top: 100px;
+  }
+  #home .content .blob {
+    height: 50vw;
+    top: auto;
+    left: auto;
+    right: 0px;
+  }
+  #home .content .blob-1 {
+    height: 50vw;
+    top: 0px;
+    left: 0px;
+  }
+  #home .content .blob-2 {
+    height: 50vw;
+    right: 0px;
+    top: 50vh;
+    left: auto;
+  }
+  #home .content .blob-3 {
+    height: 50vw;
+    right: auto;
+    top: auto;
+    bottom: 5vh;
+    left: auto;
+  }
+  #home .content .left,
+  #home .content .right {
+    width: 100%;
+    height: auto;
+  }
+  #home .content .left h1 {
+    font-size: 2em;
+  }
+  #home .content .left p {
+    font-size: 1em;
+    padding: 20px 0px 20px 0;
+  }
+  #home .content .left .cta a {
+    font-size: 1.4em;
+  }
+  #home .content .right {
+    display: none;
+  }
+  #aboutus .content {
+    flex-direction: column;
+  }
+  #aboutus .content .blob {
+    height: 50vw;
+    top: auto;
+    left: auto;
+    right: 0px;
+  }
+  #aboutus .content .blob-1 {
+    height: 50vw;
+    top: 0px;
+    left: 0px;
+  }
+  #aboutus .content .blob-2 {
+    height: 50vw;
+    right: 0px;
+    top: 50vh;
+    left: auto;
+  }
+  #aboutus .content .blob-3 {
+    height: 50vw;
+    right: auto;
+    top: auto;
+    bottom: 5vh;
+    left: auto;
+  }
+  #aboutus .content .left,
+  #aboutus .content .right {
+    width: 100%;
+    height: auto;
+  }
+  #aboutus .content .left h1 {
+    font-size: 2em;
+  }
+  #aboutus .content .left p {
+    font-size: 1em;
+    padding: 20px 0px 20px 0;
+  }
+  #aboutus .content .right {
+    display: none;
+  }
   #services .content {
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  #services .content .card {
+    width: 45vw;
+  }
+  #services .content .card p {
+    font-size: 0.7em;
+  }
+  #services .content .card .front h2 {
+    font-size: 1em;
+  }
+  #services .content .card .front img {
+    height: auto;
+  }
+  #services .blob {
+    display: none;
+    height: 50vw;
+    top: auto;
+    left: auto;
+    right: 0px;
+  }
+  #services .blob-1 {
+    height: 50vw;
+    top: 0px;
+    left: 0px;
+  }
+  #services .blob-2 {
+    height: 50vw;
+    right: 0px;
+    top: 50vh;
+    left: auto;
   }
 }
-@media (max-width: 768px) {
-  #services .content {
-    grid-template-columns: 1fr;
+@media (max-width: 771px) {
+  #navbar {
+    padding: 20px 20px;
+  }
+  #navbar .container {
+    width: 100%;
+    justify-content: center;
+  }
+  #navbar .container .logo {
+    width: 200px;
+  }
+  #navbar .contact {
+    display: none;
   }
 }
 @keyframes moveBlob {
