@@ -1003,11 +1003,19 @@ header {
     border-radius: 15%;
   }
   #aboutus .content .right .items .item h2 {
+    width: max-content;
     margin: 5px;
     font-size: 1em;
   }
   #aboutus .content .right .items .item p {
     font-size: 0.7em;
+    padding: 20px 0px 0px 0;
+  }
+  #aboutus .content .right .items .item .mobile {
+    display: block;
+  }
+  #aboutus .content .right .items .item .desktop {
+    display: none;
   }
   #aboutus .content .right .items .active {
     opacity: 1;
