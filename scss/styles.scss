@@ -679,8 +679,6 @@ header {
       flex-direction: column;
       height: 100vh;
       margin-top: 100px;
-      // justify-content: center;
-      // align-items: center;
     }
 
     .left {
@@ -694,94 +692,6 @@ header {
         position: relative;
         z-index: 5;
         padding: 20px 270px 20px 0;
-      }
-
-      .cta {
-
-        position: relative;
-        width: fit-content;
-        padding: 0px 30px;
-        margin: 30px 0;
-        height: 45px;
-        font-weight: bold;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 45px 45px 45px 45px;
-        border: 0px solid var(--color-dark);
-        cursor: pointer;
-        transition: all 0.3s ease;
-
-        .fas {
-          color: var(--color-dark);
-          margin-left: 10px;
-          transition: all .3s ease;
-        }
-
-        &:before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          border-radius: 45px 45px 45px 45px;
-          height: 100%;
-          background-color: var(--color-primary);
-          -webkit-box-shadow: 5px 5px 30px 5px var(--color-primary);
-          box-shadow: 5px 5px 30px 5px var(--color-primary);
-          filter: blur(5px);
-          z-index: 1;
-          transition: all 0.3s ease;
-        }
-
-        &::after {
-          height: 100%;
-          content: "";
-          position: absolute;
-          bottom: 0;
-          width: 0%;
-          border-bottom: 0px solid var(--color-primary);
-          border-top: 0px solid var(--color-primary);
-          z-index: 1;
-          transition: all 0.3s ease;
-        }
-
-        &:hover {
-          .fas {
-            color: var(--color-primary);
-          }
-
-          &:before {
-            background-color: var(--background);
-            -webkit-box-shadow: 0px 0px 0px 0px var(--color-primary);
-            box-shadow: 0px 0px 0px 0px var(--color-primary);
-            filter: blur(0px);
-          }
-
-          &::after {
-            width: 80%;
-            border-bottom: 1px solid var(--color-primary);
-            border-top: 1px solid var(--color-primary);
-          }
-
-          a {
-            color: var(--color-primary);
-          }
-        }
-
-        margin-top: 20px;
-
-
-        a {
-          position: relative;
-          z-index: 1;
-          color: var(--color-dark);
-          font-size: 1.15em;
-          font-weight: bold;
-          text-decoration: none;
-          transition: all 0.3s ease;
-
-        }
       }
 
       .aboutusimg {
@@ -824,105 +734,101 @@ header {
         left: 68%;
         transform: translate(-50%, -50%);
         user-select: none;
-      }
 
-      .items .item {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 30vw;
-        height: 30vw;
-        border-radius: 20%;
-        overflow: hidden;
-        transition: all 300ms ease-in-out;
-        z-index: -1;
-        opacity: 0;
-        padding: 50px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        .item {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 30vw;
+          height: 30vw;
+          border-radius: 20%;
+          overflow: hidden;
+          transition: all 300ms ease-in-out;
+          z-index: -1;
+          opacity: 0;
+          padding: 50px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
 
-        h2 {
-          margin: 20px;
-          font-size: 1.8em;
+          h2 {
+            margin: 20px;
+            font-size: 1.8em;
+          }
+
+          p {
+            font-size: 1.2em;
+          }
+
+          img {
+            height: 45%;
+            object-fit: cover;
+            // width: 50%;
+          }
         }
 
-        p {
-          font-size: 1.2em;
+        .active {
+          opacity: 1;
+          z-index: 99;
+          box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
         }
 
-        img {
-          height: 45%;
-          // width: 50%;
+        .prev {
+          z-index: 2;
+          opacity: 0.25;
+          transform: translate(-125%, -50%) scale(0.5);
         }
-      }
 
-      .item img {
-        // width: 45%;
-        object-fit: cover;
-      }
+        .next {
+          z-index: 2;
+          opacity: 0.25;
+          transform: translate(25%, -50%) scale(0.5);
+        }
 
-      .item.active {
-        opacity: 1;
-        z-index: 99;
-        box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
-      }
+        .button-container {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 30vw;
+          z-index: 100;
 
-      .item.prev {
-        z-index: 2;
-        opacity: 0.25;
-        transform: translate(-125%, -50%) scale(0.5);
-      }
+          .button {
+            color: #fff;
+            font-size: 32px;
+            cursor: pointer;
+            position: relative;
+            opacity: 0.75;
+            transition: all 300ms ease-in-out;
 
-      .item.next {
-        z-index: 2;
-        opacity: 0.25;
-        transform: translate(25%, -50%) scale(0.5);
-      }
+            &:hover {
+              opacity: 1;
+            }
 
-      .items .button-container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 30vw;
-        z-index: 100;
-      }
+            &::before {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 50px;
+              height: 50px;
+              background-color: rgba(0, 0, 0, 1);
+              border-radius: 50%;
+              z-index: -99;
+            }
 
-      .button-container .button {
-        color: #fff;
-        font-size: 32px;
-        cursor: pointer;
-        position: relative;
-        opacity: 0.75;
-        transition: all 300ms ease-in-out;
-      }
+            &:nth-child(1) {
+              float: left;
+            }
 
-      .button-container .button:hover {
-        opacity: 1;
-      }
-
-      .button-container .button:before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 50px;
-        height: 50px;
-        background-color: rgba(0, 0, 0, 1);
-        border-radius: 50%;
-        z-index: -99;
-      }
-
-      .button-container .button:nth-child(1) {
-        float: left;
-      }
-
-      .button-container .button:nth-child(2) {
-        float: right;
+            &:nth-child(2) {
+              float: right;
+            }
+          }
+        }
       }
     }
 
@@ -1084,6 +990,9 @@ header {
 
 @media (max-width: $breakpoint) {
 
+  section {
+    padding: 0 20px;
+  }
 
   h1 {
     font-size: 2em;
@@ -1223,41 +1132,51 @@ header {
   }
 
   #aboutus {
+    height: auto;
+
     .content {
+      flex-direction: column-reverse;
+      justify-content: flex-start;
+      height: auto;
+
       .blob {
         height: 50vw;
-        top: auto;
-        left: auto;
-        right: 0px;
+        top: 100vh;
+        left: 0px;
+        right: unset;
+        z-index: 0;
 
         &-1 {
           height: 50vw;
-          top: 0px;
-          left: 0px;
+          top: 140vh;
+          left: unset;
+          right: 0px;
+          z-index: 2;
         }
 
         &-2 {
           height: 50vw;
-          right: 0px;
-          top: 50vh;
-          left: auto;
+          right: unset;
+          top: 129vh;
+          left: 0px;
+          z-index: 2;
         }
 
         &-3 {
           height: 50vw;
           right: auto;
-          top: auto;
-          bottom: 5vh;
+          top: 216vh;
+          bottom: unset;
           left: auto;
+          z-index: 2;
         }
       }
-
-      flex-direction: column;
 
       .left,
       .right {
         width: 100%;
-        height: auto;
+        height: fit-content;
+        margin-top: 20px;
       }
 
       .left {
@@ -1269,10 +1188,94 @@ header {
           font-size: 1em;
           padding: 20px 0px 20px 0;
         }
+
+        .aboutusimg {
+          position: relative;
+          z-index: 1;
+          width: 90vw;
+          height: 90vw;
+        }
       }
 
       .right {
-        display: none;
+        align-items: center;
+
+        .whyusheader {
+          width: fit-content;
+          position: relative;
+          top: 0;
+          left: 0;
+          font-size: 2em;
+          font-family: "Colombia";
+        }
+
+        .items {
+          margin-top: 20px;
+          height: 90vw;
+          position: relative;
+          top: 0;
+          left: 0;
+          transform: translate(-0%, -0%);
+
+          .item {
+            width: 50vw;
+            height: fit-content;
+            padding: 20px;
+            border-radius: 15%;
+
+            h2 {
+              margin: 5px;
+              font-size: 1em;
+            }
+
+            p {
+              font-size: 0.7em;
+            }
+          }
+
+          .active {
+            opacity: 1;
+            z-index: 99;
+            box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
+          }
+
+          .prev {
+            z-index: 2;
+            opacity: 0.25;
+            transform: translate(-125%, -50%) scale(0.5);
+          }
+
+          .next {
+            z-index: 2;
+            opacity: 0.25;
+            transform: translate(25%, -50%) scale(0.5);
+          }
+
+          .button-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60vw;
+            z-index: 100;
+
+            .button {
+              color: #fff;
+              font-size: 32px;
+              cursor: pointer;
+              position: relative;
+              opacity: 0.75;
+              transition: all 300ms ease-in-out;
+
+              &:hover {}
+
+              &::before {
+                width: 40px;
+                height: 40px;
+              }
+            }
+          }
+        }
       }
     }
   }

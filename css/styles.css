@@ -580,79 +580,6 @@ header {
   z-index: 5;
   padding: 20px 270px 20px 0;
 }
-#aboutus .content .left .cta {
-  position: relative;
-  width: fit-content;
-  padding: 0px 30px;
-  margin: 30px 0;
-  height: 45px;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 45px 45px 45px 45px;
-  border: 0px solid var(--color-dark);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 20px;
-}
-#aboutus .content .left .cta .fas {
-  color: var(--color-dark);
-  margin-left: 10px;
-  transition: all 0.3s ease;
-}
-#aboutus .content .left .cta:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  border-radius: 45px 45px 45px 45px;
-  height: 100%;
-  background-color: var(--color-primary);
-  -webkit-box-shadow: 5px 5px 30px 5px var(--color-primary);
-  box-shadow: 5px 5px 30px 5px var(--color-primary);
-  filter: blur(5px);
-  z-index: 1;
-  transition: all 0.3s ease;
-}
-#aboutus .content .left .cta::after {
-  height: 100%;
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 0%;
-  border-bottom: 0px solid var(--color-primary);
-  border-top: 0px solid var(--color-primary);
-  z-index: 1;
-  transition: all 0.3s ease;
-}
-#aboutus .content .left .cta:hover .fas {
-  color: var(--color-primary);
-}
-#aboutus .content .left .cta:hover:before {
-  background-color: var(--background);
-  -webkit-box-shadow: 0px 0px 0px 0px var(--color-primary);
-  box-shadow: 0px 0px 0px 0px var(--color-primary);
-  filter: blur(0px);
-}
-#aboutus .content .left .cta:hover::after {
-  width: 80%;
-  border-bottom: 1px solid var(--color-primary);
-  border-top: 1px solid var(--color-primary);
-}
-#aboutus .content .left .cta:hover a {
-  color: var(--color-primary);
-}
-#aboutus .content .left .cta a {
-  position: relative;
-  z-index: 1;
-  color: var(--color-dark);
-  font-size: 1.15em;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
 #aboutus .content .left .aboutusimg {
   position: relative;
   z-index: 1;
@@ -703,21 +630,19 @@ header {
 }
 #aboutus .content .right .items .item img {
   height: 45%;
-}
-#aboutus .content .right .item img {
   object-fit: cover;
 }
-#aboutus .content .right .item.active {
+#aboutus .content .right .items .active {
   opacity: 1;
   z-index: 99;
   box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
 }
-#aboutus .content .right .item.prev {
+#aboutus .content .right .items .prev {
   z-index: 2;
   opacity: 0.25;
   transform: translate(-125%, -50%) scale(0.5);
 }
-#aboutus .content .right .item.next {
+#aboutus .content .right .items .next {
   z-index: 2;
   opacity: 0.25;
   transform: translate(25%, -50%) scale(0.5);
@@ -730,7 +655,7 @@ header {
   width: 30vw;
   z-index: 100;
 }
-#aboutus .content .right .button-container .button {
+#aboutus .content .right .items .button-container .button {
   color: #fff;
   font-size: 32px;
   cursor: pointer;
@@ -738,10 +663,10 @@ header {
   opacity: 0.75;
   transition: all 300ms ease-in-out;
 }
-#aboutus .content .right .button-container .button:hover {
+#aboutus .content .right .items .button-container .button:hover {
   opacity: 1;
 }
-#aboutus .content .right .button-container .button:before {
+#aboutus .content .right .items .button-container .button::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -753,10 +678,10 @@ header {
   border-radius: 50%;
   z-index: -99;
 }
-#aboutus .content .right .button-container .button:nth-child(1) {
+#aboutus .content .right .items .button-container .button:nth-child(1) {
   float: left;
 }
-#aboutus .content .right .button-container .button:nth-child(2) {
+#aboutus .content .right .items .button-container .button:nth-child(2) {
   float: right;
 }
 
@@ -891,6 +816,9 @@ header {
 }
 
 @media (max-width: 1110px) {
+  section {
+    padding: 0 20px;
+  }
   h1 {
     font-size: 2em;
   }
@@ -993,37 +921,48 @@ header {
   #home .content .right {
     display: none;
   }
+  #aboutus {
+    height: auto;
+  }
   #aboutus .content {
-    flex-direction: column;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    height: auto;
   }
   #aboutus .content .blob {
     height: 50vw;
-    top: auto;
-    left: auto;
-    right: 0px;
+    top: 100vh;
+    left: 0px;
+    right: unset;
+    z-index: 0;
   }
   #aboutus .content .blob-1 {
     height: 50vw;
-    top: 0px;
-    left: 0px;
+    top: 140vh;
+    left: unset;
+    right: 0px;
+    z-index: 2;
   }
   #aboutus .content .blob-2 {
     height: 50vw;
-    right: 0px;
-    top: 50vh;
-    left: auto;
+    right: unset;
+    top: 129vh;
+    left: 0px;
+    z-index: 2;
   }
   #aboutus .content .blob-3 {
     height: 50vw;
     right: auto;
-    top: auto;
-    bottom: 5vh;
+    top: 216vh;
+    bottom: unset;
     left: auto;
+    z-index: 2;
   }
   #aboutus .content .left,
   #aboutus .content .right {
     width: 100%;
-    height: auto;
+    height: fit-content;
+    margin-top: 20px;
   }
   #aboutus .content .left h1 {
     font-size: 2em;
@@ -1032,8 +971,78 @@ header {
     font-size: 1em;
     padding: 20px 0px 20px 0;
   }
+  #aboutus .content .left .aboutusimg {
+    position: relative;
+    z-index: 1;
+    width: 90vw;
+    height: 90vw;
+  }
   #aboutus .content .right {
-    display: none;
+    align-items: center;
+  }
+  #aboutus .content .right .whyusheader {
+    width: fit-content;
+    position: relative;
+    top: 0;
+    left: 0;
+    font-size: 2em;
+    font-family: "Colombia";
+  }
+  #aboutus .content .right .items {
+    margin-top: 20px;
+    height: 90vw;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0%, 0%);
+  }
+  #aboutus .content .right .items .item {
+    width: 50vw;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 15%;
+  }
+  #aboutus .content .right .items .item h2 {
+    margin: 5px;
+    font-size: 1em;
+  }
+  #aboutus .content .right .items .item p {
+    font-size: 0.7em;
+  }
+  #aboutus .content .right .items .active {
+    opacity: 1;
+    z-index: 99;
+    box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
+  }
+  #aboutus .content .right .items .prev {
+    z-index: 2;
+    opacity: 0.25;
+    transform: translate(-125%, -50%) scale(0.5);
+  }
+  #aboutus .content .right .items .next {
+    z-index: 2;
+    opacity: 0.25;
+    transform: translate(25%, -50%) scale(0.5);
+  }
+  #aboutus .content .right .items .button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    z-index: 100;
+  }
+  #aboutus .content .right .items .button-container .button {
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+    position: relative;
+    opacity: 0.75;
+    transition: all 300ms ease-in-out;
+  }
+  #aboutus .content .right .items .button-container .button::before {
+    width: 40px;
+    height: 40px;
   }
   #services .content {
     grid-template-columns: repeat(2, 1fr);
