@@ -759,7 +759,15 @@ header {
           }
 
           p {
-            font-size: 1.2em;
+            font-size: 1em;
+          }
+
+          .mobile {
+            display: none;
+          }
+
+          .desktop {
+            display: block;
           }
 
           img {
@@ -981,6 +989,9 @@ header {
         backdrop-filter: blur(0px);
         color: var(--color-bright);
 
+        p {
+          font-size: 1em;
+        }
       }
     }
 

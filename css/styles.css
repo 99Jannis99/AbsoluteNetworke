@@ -626,7 +626,13 @@ header {
   font-size: 1.8em;
 }
 #aboutus .content .right .items .item p {
-  font-size: 1.2em;
+  font-size: 1em;
+}
+#aboutus .content .right .items .item .mobile {
+  display: none;
+}
+#aboutus .content .right .items .item .desktop {
+  display: block;
 }
 #aboutus .content .right .items .item img {
   height: 45%;
@@ -813,6 +819,9 @@ header {
   align-items: center;
   backdrop-filter: blur(0px);
   color: var(--color-bright);
+}
+#services .content .card .card-back p {
+  font-size: 1em;
 }
 
 @media (max-width: 1110px) {
