@@ -1101,13 +1101,20 @@ header {
 @media (max-width: 771px) {
   #navbar {
     padding: 20px 20px;
+    transition: all 1s ease;
   }
   #navbar .container {
     width: 100%;
     justify-content: center;
+    transition: all 1s ease;
   }
   #navbar .container .logo {
     width: 200px;
+  }
+  #navbar .logoback {
+    transition: all 1s ease;
+    width: fit-content;
+    background-color: transparent;
   }
   #navbar .contact {
     display: none;
