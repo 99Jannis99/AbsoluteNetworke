@@ -8,6 +8,10 @@
   --rgba3: 255;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -18,10 +22,8 @@ body {
   background-color: var(--background);
   font-family: "Montserrat";
   font-weight: 300;
-  background-size: 100vw;
   overflow-y: overlay;
   overflow-x: hidden;
-  height: 300vh;
   transition: all 0.5s ease;
 }
 
@@ -1109,6 +1111,19 @@ header {
   }
   #navbar .contact {
     display: none;
+  }
+}
+@media (max-width: 390px) {
+  #aboutus .content .right .items .item {
+    padding: 15px;
+  }
+  #aboutus .content .right .items .item h2 {
+    margin: 5px;
+    font-size: 0.8em;
+  }
+  #aboutus .content .right .items .item p {
+    font-size: 0.6em;
+    padding: 10px 0px 0px 0;
   }
 }
 @keyframes moveBlob {

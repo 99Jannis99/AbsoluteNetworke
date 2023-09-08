@@ -1,5 +1,6 @@
-$breakpoint: 1110px;
-$breakpoint2: 771px;
+$breakpoint-tablet: 1110px;
+$breakpoint-mobile: 771px;
+$breakpoint-lowest: 390px;
 
 :root {
   --background: #111111;
@@ -12,7 +13,7 @@ $breakpoint2: 771px;
 }
 
 html {
-  // overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 * {
@@ -25,10 +26,8 @@ body {
   background-color: var(--background);
   font-family: "Montserrat";
   font-weight: 300;
-  background-size: 100vw;
   overflow-y: overlay;
   overflow-x: hidden;
-  height: 300vh;
   transition: all 0.5s ease;
 }
 
@@ -999,7 +998,7 @@ header {
 }
 
 
-@media (max-width: $breakpoint) {
+@media (max-width: $breakpoint-tablet) {
 
   section {
     padding: 0 20px;
@@ -1348,7 +1347,7 @@ header {
   }
 }
 
-@media (max-width: $breakpoint2) {
+@media (max-width: $breakpoint-mobile) {
   #navbar {
     padding: 20px 20px;
 
@@ -1371,6 +1370,30 @@ header {
   //     grid-template-columns: 1fr;
   //   }
   // }
+}
+
+@media (max-width: $breakpoint-lowest) {
+  #aboutus {
+    .content {
+      .right {
+        .items {
+          .item {
+            padding: 15px;
+
+            h2 {
+              margin: 5px;
+              font-size: 0.8em;
+            }
+
+            p {
+              font-size: 0.6em;
+              padding: 10px 0px 0px 0;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @keyframes moveBlob {
