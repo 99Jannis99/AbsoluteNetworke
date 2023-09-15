@@ -2,12 +2,14 @@ $(document).ready(function () {
   // hintergrund für die navbar
   $(window).scroll(function () {
     var scrollPos = $(window).scrollTop();
-    if (scrollPos > 150) {
+    if (scrollPos > ($(window).width() < 771 ? 50 : 150)) {
       $("#logo-container").addClass("logoback");
       $("#nav-list-container").addClass("nav-linksback");
+      $("#navbar").addClass("navMobileActive");
     } else {
       $("#logo-container").removeClass("logoback");
       $("#nav-list-container").removeClass("nav-linksback");
+      $("#navbar").removeClass("navMobileActive");
     }
   });
   // Toggle menu on burger click
