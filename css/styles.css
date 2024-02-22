@@ -592,6 +592,84 @@ header {
   background-position: center;
   background-size: cover;
 }
+#aboutus .content .left .container {
+  width: 30vw;
+  display: flex;
+  justify-content: space-between;
+}
+#aboutus .content .left .container .cta {
+  position: relative;
+  width: fit-content;
+  padding: 0px 30px;
+  height: 45px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 45px 45px 45px 45px;
+  border: 0px solid var(--color-dark);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+#aboutus .content .left .container .cta .fas {
+  color: var(--color-dark);
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+#aboutus .content .left .container .cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 45px 45px 45px 45px;
+  height: 100%;
+  background-color: var(--color-primary);
+  -webkit-box-shadow: 5px 5px 30px 5px var(--color-primary);
+  box-shadow: 5px 5px 30px 5px var(--color-primary);
+  filter: blur(5px);
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+#aboutus .content .left .container .cta::after {
+  height: 100%;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0%;
+  border-bottom: 0px solid var(--color-primary);
+  border-top: 0px solid var(--color-primary);
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+#aboutus .content .left .container .cta:hover .fas {
+  color: var(--color-primary);
+}
+#aboutus .content .left .container .cta:hover:before {
+  background-color: var(--background);
+  -webkit-box-shadow: 0px 0px 0px 0px var(--color-primary);
+  box-shadow: 0px 0px 0px 0px var(--color-primary);
+  filter: blur(0px);
+}
+#aboutus .content .left .container .cta:hover::after {
+  width: 80%;
+  border-bottom: 1px solid var(--color-primary);
+  border-top: 1px solid var(--color-primary);
+}
+#aboutus .content .left .container .cta:hover a {
+  color: var(--color-primary);
+}
+#aboutus .content .left .container .cta a {
+  position: relative;
+  z-index: 1;
+  color: var(--color-dark);
+  font-family: "Colombia";
+  font-size: 1.7em;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
 #aboutus .content .right .whyusheader {
   position: absolute;
   top: 125%;
@@ -999,6 +1077,23 @@ header {
     z-index: 1;
     width: 90vw;
     height: 90vw;
+  }
+  #aboutus .content .left .container {
+    width: 100vw;
+    flex-direction: column;
+  }
+  #aboutus .content .left .container .cta {
+    margin: 30px 0px;
+  }
+  #aboutus .content .left .container .cta:active, #aboutus .content .left .container .cta:focus {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  #aboutus .content .left .container .cta a {
+    font-size: 1.4em;
+    user-select: none;
   }
   #aboutus .content .right {
     align-items: center;
