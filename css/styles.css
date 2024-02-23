@@ -523,6 +523,244 @@ header {
   background-color: #fa0000;
 }
 
+#customization .content {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-bright);
+}
+#customization .content .blob {
+  fill: var(--color-secondary);
+  position: absolute;
+  height: 30vw;
+  top: 100vh;
+  left: -250px;
+  opacity: 0.6;
+  filter: blur(50px);
+  z-index: 2;
+  transition: all 0.5s ease;
+}
+#customization .content .blob-1 {
+  fill: var(--color-tetiary);
+  height: 20vw;
+  right: 190px;
+  top: 120vh;
+  left: auto;
+  z-index: -1;
+}
+#customization .content .blob-2 {
+  fill: var(--color-secondary);
+  height: 20vw;
+  right: 450px;
+  top: 170vh;
+  left: auto;
+  z-index: -1;
+}
+#customization .content .blob-3 {
+  fill: var(--color-tetiary);
+  height: 20vw;
+  right: -100px;
+  top: 180vh;
+  bottom: -150px;
+  left: auto;
+  z-index: -1;
+}
+#customization .content .left,
+#customization .content .right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 100px;
+}
+#customization .content .left h1 {
+  position: relative;
+  z-index: 5;
+  line-height: 1.2;
+}
+#customization .content .left p {
+  position: relative;
+  z-index: 5;
+  padding: 20px 270px 20px 0;
+}
+#customization .content .left .container {
+  width: 30vw;
+  display: flex;
+  justify-content: space-between;
+}
+#customization .content .left .container .cta {
+  position: relative;
+  width: fit-content;
+  padding: 0px 30px;
+  height: 45px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 45px 45px 45px 45px;
+  border: 0px solid var(--color-dark);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+#customization .content .left .container .cta .fas {
+  color: var(--color-dark);
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+#customization .content .left .container .cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 45px 45px 45px 45px;
+  height: 100%;
+  background-color: var(--color-primary);
+  -webkit-box-shadow: 5px 5px 30px 5px var(--color-primary);
+  box-shadow: 5px 5px 30px 5px var(--color-primary);
+  filter: blur(5px);
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+#customization .content .left .container .cta::after {
+  height: 100%;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0%;
+  border-bottom: 0px solid var(--color-primary);
+  border-top: 0px solid var(--color-primary);
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+#customization .content .left .container .cta:hover .fas {
+  color: var(--color-primary);
+}
+#customization .content .left .container .cta:hover:before {
+  background-color: var(--background);
+  -webkit-box-shadow: 0px 0px 0px 0px var(--color-primary);
+  box-shadow: 0px 0px 0px 0px var(--color-primary);
+  filter: blur(0px);
+}
+#customization .content .left .container .cta:hover::after {
+  width: 80%;
+  border-bottom: 1px solid var(--color-primary);
+  border-top: 1px solid var(--color-primary);
+}
+#customization .content .left .container .cta:hover a {
+  color: var(--color-primary);
+}
+#customization .content .left .container .cta a {
+  position: relative;
+  z-index: 1;
+  color: var(--color-dark);
+  font-family: "Colombia";
+  font-size: 1.7em;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+#customization .content .right .whyusheader {
+  position: absolute;
+  top: 125%;
+  left: 57%;
+  font-size: 1.7em;
+}
+#customization .content .right .items {
+  position: absolute;
+  top: 150%;
+  left: 68%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+}
+#customization .content .right .items .item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30vw;
+  height: 30vw;
+  border-radius: 20%;
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
+  z-index: -1;
+  opacity: 0;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#customization .content .right .items .item h2 {
+  margin: 20px;
+  font-size: 1.8em;
+}
+#customization .content .right .items .item p {
+  font-size: 1em;
+}
+#customization .content .right .items .item .mobile {
+  display: none;
+}
+#customization .content .right .items .item .desktop {
+  display: block;
+}
+#customization .content .right .items .item img {
+  height: 45%;
+  object-fit: cover;
+}
+#customization .content .right .items .active {
+  opacity: 1;
+  z-index: 99;
+  box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
+}
+#customization .content .right .items .prev {
+  z-index: 2;
+  opacity: 0.25;
+  transform: translate(-125%, -50%) scale(0.5);
+}
+#customization .content .right .items .next {
+  z-index: 2;
+  opacity: 0.25;
+  transform: translate(25%, -50%) scale(0.5);
+}
+#customization .content .right .items .button-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30vw;
+  z-index: 100;
+}
+#customization .content .right .items .button-container .button {
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  position: relative;
+  opacity: 0.75;
+  transition: all 300ms ease-in-out;
+}
+#customization .content .right .items .button-container .button:hover {
+  opacity: 1;
+}
+#customization .content .right .items .button-container .button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  z-index: -99;
+}
+#customization .content .right .items .button-container .button:nth-child(1) {
+  float: left;
+}
+#customization .content .right .items .button-container .button:nth-child(2) {
+  float: right;
+}
+
 #aboutus .content {
   display: flex;
   justify-content: space-between;
@@ -569,7 +807,7 @@ header {
   width: 50%;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 80vh;
   margin-top: 100px;
 }
 #aboutus .content .left h1 {
@@ -582,193 +820,10 @@ header {
   z-index: 5;
   padding: 20px 270px 20px 0;
 }
-#aboutus .content .left .aboutusimg {
-  position: relative;
-  z-index: 1;
-  width: 50vh;
-  height: 50vh;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, var(--background) 99%), linear-gradient(to left, rgba(255, 255, 255, 0) 60%, var(--background) 99%), linear-gradient(to top, rgba(255, 255, 255, 0) 75%, var(--background) 99%), linear-gradient(to right, rgba(255, 255, 255, 0) 65%, var(--background) 99%), url("../assets/AboutUS.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-#aboutus .content .left .container {
-  width: 30vw;
-  display: flex;
-  justify-content: space-between;
-}
-#aboutus .content .left .container .cta {
-  position: relative;
-  width: fit-content;
-  padding: 0px 30px;
-  height: 45px;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 45px 45px 45px 45px;
-  border: 0px solid var(--color-dark);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 20px;
-}
-#aboutus .content .left .container .cta .fas {
-  color: var(--color-dark);
-  margin-left: 10px;
-  transition: all 0.3s ease;
-}
-#aboutus .content .left .container .cta:before {
-  content: "";
+#aboutus .content .right .spline {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  border-radius: 45px 45px 45px 45px;
-  height: 100%;
-  background-color: var(--color-primary);
-  -webkit-box-shadow: 5px 5px 30px 5px var(--color-primary);
-  box-shadow: 5px 5px 30px 5px var(--color-primary);
-  filter: blur(5px);
-  z-index: 1;
-  transition: all 0.3s ease;
-}
-#aboutus .content .left .container .cta::after {
-  height: 100%;
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 0%;
-  border-bottom: 0px solid var(--color-primary);
-  border-top: 0px solid var(--color-primary);
-  z-index: 1;
-  transition: all 0.3s ease;
-}
-#aboutus .content .left .container .cta:hover .fas {
-  color: var(--color-primary);
-}
-#aboutus .content .left .container .cta:hover:before {
-  background-color: var(--background);
-  -webkit-box-shadow: 0px 0px 0px 0px var(--color-primary);
-  box-shadow: 0px 0px 0px 0px var(--color-primary);
-  filter: blur(0px);
-}
-#aboutus .content .left .container .cta:hover::after {
-  width: 80%;
-  border-bottom: 1px solid var(--color-primary);
-  border-top: 1px solid var(--color-primary);
-}
-#aboutus .content .left .container .cta:hover a {
-  color: var(--color-primary);
-}
-#aboutus .content .left .container .cta a {
-  position: relative;
-  z-index: 1;
-  color: var(--color-dark);
-  font-family: "Colombia";
-  font-size: 1.7em;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-#aboutus .content .right .whyusheader {
-  position: absolute;
-  top: 125%;
-  left: 57%;
-  font-size: 1.7em;
-}
-#aboutus .content .right .items {
-  position: absolute;
-  top: 150%;
-  left: 68%;
-  transform: translate(-50%, -50%);
-  user-select: none;
-}
-#aboutus .content .right .items .item {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30vw;
-  height: 30vw;
-  border-radius: 20%;
-  overflow: hidden;
-  transition: all 300ms ease-in-out;
-  z-index: -1;
-  opacity: 0;
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#aboutus .content .right .items .item h2 {
-  margin: 20px;
-  font-size: 1.8em;
-}
-#aboutus .content .right .items .item p {
-  font-size: 1em;
-}
-#aboutus .content .right .items .item .mobile {
-  display: none;
-}
-#aboutus .content .right .items .item .desktop {
-  display: block;
-}
-#aboutus .content .right .items .item img {
-  height: 45%;
-  object-fit: cover;
-}
-#aboutus .content .right .items .active {
-  opacity: 1;
-  z-index: 99;
-  box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
-}
-#aboutus .content .right .items .prev {
-  z-index: 2;
-  opacity: 0.25;
-  transform: translate(-125%, -50%) scale(0.5);
-}
-#aboutus .content .right .items .next {
-  z-index: 2;
-  opacity: 0.25;
-  transform: translate(25%, -50%) scale(0.5);
-}
-#aboutus .content .right .items .button-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30vw;
-  z-index: 100;
-}
-#aboutus .content .right .items .button-container .button {
-  color: #fff;
-  font-size: 32px;
-  cursor: pointer;
-  position: relative;
-  opacity: 0.75;
-  transition: all 300ms ease-in-out;
-}
-#aboutus .content .right .items .button-container .button:hover {
-  opacity: 1;
-}
-#aboutus .content .right .items .button-container .button::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
-  background-color: rgb(0, 0, 0);
-  border-radius: 50%;
-  z-index: -99;
-}
-#aboutus .content .right .items .button-container .button:nth-child(1) {
-  float: left;
-}
-#aboutus .content .right .items .button-container .button:nth-child(2) {
-  float: right;
+  top: 200vh;
+  right: -20vw;
 }
 
 #services {
@@ -1021,11 +1076,160 @@ header {
   #home .content .right {
     display: none;
   }
+  #customization {
+    height: auto;
+  }
+  #customization .content {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    height: auto;
+  }
+  #customization .content .blob {
+    height: 50vw;
+    top: 100vh;
+    left: 0px;
+    right: unset;
+    z-index: 0;
+  }
+  #customization .content .blob-1 {
+    height: 50vw;
+    top: 140vh;
+    left: unset;
+    right: 0px;
+    z-index: 2;
+  }
+  #customization .content .blob-2 {
+    height: 50vw;
+    right: unset;
+    top: 129vh;
+    left: 0px;
+    z-index: 2;
+  }
+  #customization .content .blob-3 {
+    height: 50vw;
+    right: auto;
+    top: 216vh;
+    bottom: unset;
+    left: auto;
+    z-index: 2;
+  }
+  #customization .content .left,
+  #customization .content .right {
+    width: 100%;
+    height: fit-content;
+    min-height: auto;
+    margin-top: 20px;
+  }
+  #customization .content .left h1 {
+    font-size: 2em;
+  }
+  #customization .content .left p {
+    font-size: 1em;
+    padding: 20px 0px 20px 0;
+  }
+  #customization .content .left .container {
+    width: 100vw;
+    flex-direction: column;
+  }
+  #customization .content .left .container .cta {
+    margin: 30px 0px;
+  }
+  #customization .content .left .container .cta:active, #customization .content .left .container .cta:focus {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  #customization .content .left .container .cta a {
+    font-size: 1.4em;
+    user-select: none;
+  }
+  #customization .content .right {
+    align-items: center;
+  }
+  #customization .content .right .whyusheader {
+    width: fit-content;
+    position: relative;
+    top: 0;
+    left: 0;
+    font-size: 2em;
+    font-family: "Colombia";
+  }
+  #customization .content .right .items {
+    margin-top: 20px;
+    height: 90vw;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0%, 0%);
+  }
+  #customization .content .right .items .item {
+    width: 50vw;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 15%;
+  }
+  #customization .content .right .items .item h2 {
+    width: max-content;
+    margin: 5px;
+    font-size: 1em;
+  }
+  #customization .content .right .items .item p {
+    font-size: 0.7em;
+    padding: 20px 0px 0px 0;
+  }
+  #customization .content .right .items .item .mobile {
+    display: block;
+  }
+  #customization .content .right .items .item .desktop {
+    display: none;
+  }
+  #customization .content .right .items .active {
+    opacity: 1;
+    z-index: 99;
+    box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
+  }
+  #customization .content .right .items .prev {
+    z-index: 2;
+    opacity: 0.25;
+    transform: translate(-125%, -50%) scale(0.5);
+  }
+  #customization .content .right .items .next {
+    z-index: 2;
+    opacity: 0.25;
+    transform: translate(25%, -50%) scale(0.5);
+  }
+  #customization .content .right .items .button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    z-index: 100;
+  }
+  #customization .content .right .items .button-container .button {
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+    position: relative;
+    opacity: 0.75;
+    transition: all 300ms ease-in-out;
+  }
+  #customization .content .right .items .button-container .button::before {
+    width: 40px;
+    height: 40px;
+  }
+  #customization .content .right .items .button-container .button:active, #customization .content .right .items .button-container .button:focus {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+  }
   #aboutus {
     height: auto;
   }
   #aboutus .content {
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: flex-start;
     height: auto;
   }
@@ -1072,109 +1276,13 @@ header {
     font-size: 1em;
     padding: 20px 0px 20px 0;
   }
-  #aboutus .content .left .aboutusimg {
-    position: relative;
-    z-index: 1;
-    width: 90vw;
-    height: 90vw;
-  }
-  #aboutus .content .left .container {
-    width: 100vw;
-    flex-direction: column;
-  }
-  #aboutus .content .left .container .cta {
-    margin: 30px 0px;
-  }
-  #aboutus .content .left .container .cta:active, #aboutus .content .left .container .cta:focus {
-    outline: none;
-    background-color: transparent;
-    border: none;
-    -webkit-tap-highlight-color: transparent;
-  }
-  #aboutus .content .left .container .cta a {
-    font-size: 1.4em;
-    user-select: none;
-  }
   #aboutus .content .right {
     align-items: center;
   }
-  #aboutus .content .right .whyusheader {
-    width: fit-content;
+  #aboutus .content .right .spline {
     position: relative;
-    top: 0;
-    left: 0;
-    font-size: 2em;
-    font-family: "Colombia";
-  }
-  #aboutus .content .right .items {
-    margin-top: 20px;
-    height: 90vw;
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: translate(0%, 0%);
-  }
-  #aboutus .content .right .items .item {
-    width: 50vw;
-    height: fit-content;
-    padding: 20px;
-    border-radius: 15%;
-  }
-  #aboutus .content .right .items .item h2 {
-    width: max-content;
-    margin: 5px;
-    font-size: 1em;
-  }
-  #aboutus .content .right .items .item p {
-    font-size: 0.7em;
-    padding: 20px 0px 0px 0;
-  }
-  #aboutus .content .right .items .item .mobile {
-    display: block;
-  }
-  #aboutus .content .right .items .item .desktop {
-    display: none;
-  }
-  #aboutus .content .right .items .active {
-    opacity: 1;
-    z-index: 99;
-    box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
-  }
-  #aboutus .content .right .items .prev {
-    z-index: 2;
-    opacity: 0.25;
-    transform: translate(-125%, -50%) scale(0.5);
-  }
-  #aboutus .content .right .items .next {
-    z-index: 2;
-    opacity: 0.25;
-    transform: translate(25%, -50%) scale(0.5);
-  }
-  #aboutus .content .right .items .button-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60vw;
-    z-index: 100;
-  }
-  #aboutus .content .right .items .button-container .button {
-    color: #fff;
-    font-size: 32px;
-    cursor: pointer;
-    position: relative;
-    opacity: 0.75;
-    transition: all 300ms ease-in-out;
-  }
-  #aboutus .content .right .items .button-container .button::before {
-    width: 40px;
-    height: 40px;
-  }
-  #aboutus .content .right .items .button-container .button:active, #aboutus .content .right .items .button-container .button:focus {
-    outline: none;
-    background-color: transparent;
-    border: none;
-    -webkit-tap-highlight-color: transparent;
+    top: auto;
+    right: auto;
   }
   #services .content {
     grid-template-columns: repeat(2, 1fr);
@@ -1282,14 +1390,14 @@ header {
   }
 }
 @media (max-width: 390px) {
-  #aboutus .content .right .items .item {
+  #customization .content .right .items .item {
     padding: 15px;
   }
-  #aboutus .content .right .items .item h2 {
+  #customization .content .right .items .item h2 {
     margin: 5px;
     font-size: 0.8em;
   }
-  #aboutus .content .right .items .item p {
+  #customization .content .right .items .item p {
     font-size: 0.6em;
     padding: 10px 0px 0px 0;
   }
